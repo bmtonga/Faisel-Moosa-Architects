@@ -414,7 +414,7 @@
     /* image compare js ***/
     var ctrl = jQuery('.filter__container .comparison-ctrl');
     var pic_right = jQuery('.filter__container .pic--right');
-    Draggable.create(ctrl, {
+    if (window.Draggable && ctrl.length) Draggable.create(ctrl, {
         bounds: ctrl.parent(),
         type: "x",
         onDrag: function () {
@@ -440,7 +440,7 @@
     });
 
     if ($(".count-bar").length) {
-        $(".count-bar").appear(
+        if ($.fn.appear) $(".count-bar").appear(
             function () {
                 var el = $(this);
                 var percent = el.data("percent");
@@ -453,7 +453,7 @@
 
 
 
-    $('.header__top__lang-select-select select, .contact__form-input-select select').niceSelect();
+    if ($.fn.niceSelect) $('.header__top__lang-select-select select, .contact__form-input-select select').niceSelect();
 
     $(".search-open-btn").on("click", function () {
         $(".search__popup").addClass("search-opened");
@@ -543,7 +543,7 @@
         }, 1000);
     });
 
-    $('.carouselTicker-nav').carouselTicker({});
+    if ($.fn.carouselTicker) $('.carouselTicker-nav').carouselTicker({});
 
     /*** pricing table2 */
     const pricingMonthlyBtn = $("#monthly-btn"),
