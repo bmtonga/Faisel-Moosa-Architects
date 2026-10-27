@@ -144,3 +144,8 @@ body::-webkit-scrollbar-thumb:hover {
 .breadcrumb__background {
   filter: brightness(0.5);
 }
+
+/* Anchor targets: breathing room under the fixed header for non-JS / native jumps */
+#about, #services, #projects {
+  scroll-margin-top: 150px;
+}
