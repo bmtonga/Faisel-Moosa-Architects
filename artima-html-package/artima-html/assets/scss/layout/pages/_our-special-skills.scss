@@ -1,0 +1,118 @@
+@use '../../utils' as *;
+
+.our-special-skills {
+    position: relative;
+
+    @media #{$xl} {
+        overflow: hidden;
+    }
+
+    &__bg {
+        background-color: #F8F4F1;
+        padding-top: 120px;
+        padding-bottom: 55px;
+        margin-top: 30px;
+
+        @media #{$md} {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            margin-top: 0;
+        }
+        @media #{$sm,$xs} {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            margin-top: 0;
+        }
+    }
+
+    &__content {
+        margin-right: 30px;
+
+        @media #{$lg, $md, $sm, $xs} {
+           margin-right: 0;
+        }
+    }
+
+    .skill-one__progress {
+        position: relative;
+        display: block;
+        width: 100%;
+      
+        &-single {
+          position: relative;
+          display: block;
+          margin-bottom: 30px;
+      
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &-title {
+            font-size: 16px;
+            font-family: var(--rr-ff-body);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+      
+        .bar {
+          position: relative;
+          width: 100%;
+          height: 4px;
+          background: #C4C4C4;
+          margin-bottom: 0;
+        }
+      
+        .bar-inner {
+          position: relative;
+          display: block;
+          width: 0;
+          height: 4px;
+          transition: all 1500ms ease;
+          background: var(--rr-theme-primary);
+        }
+      
+        .count-text {
+          position: absolute;
+          top: 50%;
+          transform: translate(0%, -50%);
+          right: 0;
+          transition: all 500ms ease;
+          opacity: 1;
+          font-style: normal;
+          font-family: var(--rr-ff-exo);
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 26px;
+          background-color: var(--rr-theme-primary);
+          color: var(--rr-common-white);
+          padding: 2px 8px;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+
+    &__media {
+        position: absolute;
+        top: -180px;
+        right: -290px;
+
+        @media #{$xl} {
+            right: -330px;
+        }
+
+        @media #{$lg, $md, $sm, $xs} {
+            position: inherit;
+            right: inherit;
+            margin-top: 40px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

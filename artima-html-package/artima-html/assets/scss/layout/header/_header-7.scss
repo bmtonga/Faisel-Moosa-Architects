@@ -1,0 +1,129 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 header-common
+/*----------------------------------------*/
+.header-7 {
+    padding: 0;
+    background-color: transparent;
+    z-index: 999;
+    position: fixed;
+    padding-top: 25px;
+    width: 100%;
+    @media #{$lg,$md,$sm,$xs} {
+        padding-top: 10px;
+        left: 15px;
+        right: 15px;
+        top: 15px;
+        width: inherit;
+    }
+
+    @media (min-width: 1400px) {
+
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+            max-width: 1650px;
+        }
+    }
+
+    .header {
+
+        &__logo {
+            img {
+                @media #{$xs} {
+                    max-width: 120px;
+                }
+            }
+        }
+
+        &__main {
+            .main-menu {
+
+                ul {
+                    li {
+                        @media (max-width:1199px) {
+                            &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &__hamburger {
+            .bar-icon {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(7px);
+                border-radius: 37.5px;
+                width: 75px;
+                height: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    background-color: #D9D9D9;
+                }
+            }
+        }
+    }
+
+    .mean__menu-wrapper {
+        margin-right: auto;
+        padding-left: 100px;
+
+        @media #{$xl,$lg, $md, $sm, $xs} {
+            padding-left: 30px;
+        }
+    }
+
+    .rr-header-icon-search {
+        padding-right: 30px;
+        color: var(--rr-common-white);
+
+        @media #{$xs} {
+            padding-right: 0;
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: var(--rr-theme-primary);
+        }
+    }
+
+    .rr-header-contact-btn {
+        .rr-btn__header {
+            padding: 11.5px 33px;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.30);
+        }
+    }
+
+    .rr-header-message {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include border-radius(500px);
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        margin-right: 30px;
+
+        svg [stroke="#767676"] {
+            stroke: var(--rr-common-white);
+        }
+
+        &:hover {
+            border-color: transparent;
+            background-color: var(--rr-theme-primary);
+        }
+    }
+
+
+}

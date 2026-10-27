@@ -1,0 +1,88 @@
+@use '../../utils' as *;
+
+.blog-grid {
+    
+    &__item {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 30px 60px rgba(17, 22, 31, 0.1);
+        background-color: var(--rr-common-white);
+        margin-bottom: 30px;
+
+        &:hover {
+
+            .blog-grid {
+                &__media {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &__media {
+        overflow: hidden;
+        display: block;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            @extend %rr-transition-3;
+        }
+    }
+
+    &__date {
+        display: inline-block;
+        background-color: var(--rr-theme-primary);
+        font-size: 14px;
+        line-height: 26px;
+        color: var(--rr-common-white);
+        padding: 2px 17px;
+        rotate: -90deg;
+        top: 85px;
+        left: -30px;
+        position: absolute;
+    }
+
+    &__content {
+        padding: 30px;
+
+        @media #{$xs} {
+            padding: 30px 15px;
+        }
+
+        .read-more {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            &:hover {
+                svg [stroke="#767676"] {
+                    stroke: var(--rr-theme-primary);
+                }
+            }
+        }
+    }
+
+    &__meta {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+        li {
+            a {
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,63 @@
+@use '../../utils' as *;
+
+.experience-2{
+
+    
+    &__box {
+      gap: 30px;
+      padding: 36px 0;
+      background-color: #F5F5F5;
+      @media #{$xxs} {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+      }
+  }
+
+  &__item {
+    gap: 30px;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 1px;
+        height: calc(100% + -13px);
+        right: -65%;
+        top: 0px;
+        position: absolute;
+        background: rgba(8, 10, 11, 0.1);
+
+      @media #{$xs, $sm, $md, $lg, $xl} {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+
+    &-text {
+      &-title {
+        margin-bottom: 5px;
+        text-align: center;
+
+        @media #{$xs} {
+          font-size: 30px;
+        }
+        span {
+          font-family: var(--rr-ff-heading);
+          color: var(--rr-heading-primary);
+          letter-spacing: 4px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}

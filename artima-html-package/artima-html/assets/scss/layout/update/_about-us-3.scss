@@ -1,0 +1,56 @@
+@use '../../utils' as *;
+.about-us-3 {
+
+    &__thumb {
+        position: relative;
+        .image-1 {
+            position: absolute;
+            right: -12px;
+            top: -13px;
+        }
+        .image-2 {
+            position: absolute;
+            right: -55px;
+            top: -55px;
+        }
+    }
+
+    &__media {
+
+        @media #{$xs} {
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .image-3 {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .image-4 {
+            margin-top: 80px;
+            
+            @media #{$lg, $md, $sm, $xs} {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+           
+        }
+
+    }
+
+    &__content {
+        padding-left: 30px;
+
+        @media #{$lg, $md, $sm} {
+            margin-top: 160px;
+            padding-left: 0;
+        }
+        @media #{$xs} {
+            margin-top: 140px;
+            padding-left: 0;
+        }
+    }
+}

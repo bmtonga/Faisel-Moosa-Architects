@@ -1,0 +1,107 @@
+@use '../../utils' as *;
+
+.counter {
+    position: relative;
+    background-color: #080A0B;
+    
+    &__sapce {
+        padding-top: 300px;
+        margin-top: -240px;
+        padding-bottom: 94px;
+
+        @media #{$xs, $sm, $md} {
+            margin-top: 0;
+            padding-top: 80px;
+        }
+    }
+    
+    &__bg {
+       img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .1;
+        object-fit: cover;
+       }
+        
+    }
+
+    &__wrapper {
+        gap: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        @media #{$md,$sm} {
+            flex-wrap: wrap;
+        }
+        @media #{$xs} {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        gap: 30px;
+        position: relative;
+    
+        &:after {
+            content: "";
+            width: 1px;
+            height: calc(100% + -13px);
+            right: -65%;
+            top: 0px;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+    
+          @media #{$xs, $sm, $md, $lg, $xl} {
+            display: none;
+          }
+        }
+    
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+    
+    
+        &-text {
+          &-title {
+            margin-bottom: 5px;
+            text-align: center;
+            color: var(--rr-common-white);
+            font-size: 80px;
+            line-height: 90px;
+            @media #{$lg} {
+                font-size: 60px;
+                line-height:74px;
+              }
+              @media #{$md} {
+                font-size: 44px;
+                line-height:50px;
+              }
+              @media #{$sm} {
+                font-size: 38px;
+                line-height:50px;
+              }
+              @media #{$xs} {
+                font-size: 32px;
+                line-height:44px;
+              }
+            span {
+              font-family: var(--rr-ff-heading);
+              color: var(--rr-common-white);
+              letter-spacing: 6px;
+            }
+          }
+    
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--rr-common-white);
+          }
+        }
+      }
+}

@@ -1,0 +1,98 @@
+@use '../../utils' as *;
+
+.latest-project {
+
+    .section {
+        &__title-wrapper {
+            
+        }
+    }
+    .des {
+        max-width: 518px;
+        margin-left: auto;
+
+        @media #{$lg, $md, $sm, $xs} {
+            max-width: 100%;
+        }
+    }
+
+    &__item {
+        margin-bottom: 60px;
+
+        &:hover {
+            
+            .latest-project {
+
+                &__media {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .latest-project {
+                &__media {
+                    .icon {
+                        transform: translate(-50%, -50%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__media {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--rr-heading-primary);
+            opacity: 0.3%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %rr-transition-3;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--rr-common-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(500px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transform: scale(0.1);
+            @extend %rr-transition-3;
+
+            &:hover {
+                background-color: var(--rr-heading-primary);
+                        svg path[stroke="#906E50"] {
+                            stroke: white;
+                        }
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 20px;
+
+        h5 {
+            margin-bottom: 5px;
+        }
+    }
+}

@@ -1,0 +1,161 @@
+@use '../../utils' as *;
+
+.choose-us {
+
+    &__shape {
+        position: absolute;
+        top: -44px;
+        right: -44px;
+        z-index: -1;
+
+        @media #{$xs} {
+           display: none;
+        }
+    }
+
+    &__media {
+        max-width: 480px;
+        position: relative;
+        margin-left: auto;
+
+        @media #{$md, $sm, $xs} {
+           margin-top: 60px;
+           margin-right: auto;
+           margin-left: inherit;
+         }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__box {
+        width: 200px;
+        height: 200px;
+        background-color: var(--rr-common-white);
+        box-shadow: 0px 30px 40px 0px rgba(8, 10, 11, 0.10);
+        align-items: center;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 40px;
+        left: -100px;
+        padding: 30px;
+
+       
+        @media #{$lg, $md, $sm, $xs} {
+            padding: 10px 15px;
+            left: 0;
+            bottom: 0;
+         }
+        
+       
+        @media #{$xs} {
+            position: inherit;
+            margin-top: 60px;
+         }
+        
+
+        img {
+            width: inherit;
+        }
+        h6 {
+            font-weight: var(--rr-fw-sbold);
+            font-family: var(--rr-ff-body);
+        }
+        h4 {
+            span {
+                font-family: var(--rr-ff-body);
+                letter-spacing: 2px;
+            }
+        }
+
+    }
+
+    &__content {
+        padding-right: 30px;
+
+        @media #{$lg, $md, $sm, $xs} {
+           padding-right: 0;
+        }
+
+        .rr-btn {
+            padding: 13.5px 34.5px;
+        }
+    }
+
+    .skill-one__progress {
+        position: relative;
+        display: block;
+        width: 100%;
+      
+        &-single {
+          position: relative;
+          display: block;
+          margin-bottom: 30px;
+      
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &-title {
+            font-size: 16px;
+            font-family: var(--rr-ff-body);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+      
+        .bar {
+          position: relative;
+          width: 100%;
+          height: 12px;
+          background: #C4C4C4;
+          margin-bottom: 0;
+
+          &-shape {
+            position: absolute;
+            left: 0;
+            z-index: 9;
+            animation: move 3s infinite ;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      
+        .bar-inner {
+          position: relative;
+          display: block;
+          width: 0;
+          height: 12px;
+          transition: all 1500ms ease;
+          background: var(--rr-theme-primary);
+        }
+      
+        .count-text {
+          position: absolute;
+          top: -41px;
+          right: 0;
+          transition: all 500ms ease;
+          opacity: 1;
+          font-style: normal;
+          font-family: var(--rr-ff-exo);
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 36px;
+          color: var(--rr-heading-primary);
+        }
+    }
+}
+@keyframes move {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 10px;
+    }
+  }
+  

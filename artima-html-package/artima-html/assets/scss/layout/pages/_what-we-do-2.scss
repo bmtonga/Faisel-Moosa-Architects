@@ -1,0 +1,17 @@
+@use '../../utils' as *;
+
+.what-we-do-2 {
+    position: relative;
+
+    &__space {
+        padding-top: 110px;
+        padding-bottom: 267px;
+    }
+
+    &__shape {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0px);
+    }
+}

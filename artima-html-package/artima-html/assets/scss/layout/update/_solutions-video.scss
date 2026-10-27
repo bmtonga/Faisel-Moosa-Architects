@@ -1,0 +1,74 @@
+@use '../../utils' as *;
+
+.solutions-video {
+
+    &__media {
+        background-color: #080A0B;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 616px;
+
+        @media #{$xs} {
+           height: 400px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .2;
+        }
+        .popup-video   {
+            position: absolute;
+            top: 160px;
+            transform: translate(-50%, 0px);
+
+            @media #{$xs} {
+                top: 80px;
+             }
+        }
+        .icon {
+            width: 130px;
+            height: 130px;
+            border-radius: 130px;
+            border: 2px solid #906E50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 37px;
+            color: var(--rr-common-white);
+            position: relative;
+
+            @media #{$xs} {
+                width: 80px;
+                height: 80px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 218px;
+                height: 218px;
+                border-radius: 218px;
+                border: 2px solid rgba(144, 110, 80, 0.30);
+
+                @media #{$xs} {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+
+        h2 {
+            text-align: center;
+            position: absolute;
+            bottom: 120px;
+
+            @media #{$xs} {
+                bottom: 50px;
+             }
+        }
+    }
+}

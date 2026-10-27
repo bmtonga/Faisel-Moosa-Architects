@@ -1,0 +1,35 @@
+@use '../../utils' as *;
+
+.happy-customer {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+
+    &__bottom-space {
+        padding-bottom: 150px;
+    }
+
+    .section {
+        &__title-wrapper {
+            max-width: 601px;
+            margin-left: auto;
+            margin-right: auto;
+            p {
+                color:rgb(255 255 255 / 70%);
+            }
+        }
+
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-color: rgb(8 10 11 / 70%);
+    }
+}

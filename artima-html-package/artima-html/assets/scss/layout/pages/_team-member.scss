@@ -1,0 +1,95 @@
+@use '../../utils' as *;
+
+.team-member {
+
+    &__item {
+        margin-bottom: 30px;
+
+
+        @media #{$xs, $sm, $md, $lg} {
+            margin-top: 0;
+          }
+
+        &:hover {
+            .team-member {
+                &__content {
+                    box-shadow: 0px 30px 60px rgba(17, 22, 31, 0.1), inset 0px -4px 0px #906E50;
+                }
+
+                &__media {
+                    &::before {
+                        height: 100%;
+                    }
+                }
+                &__socail-media {
+                    transform: translateX(0);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__media {
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 0;
+            background-color: rgb(8 10 11 / 70%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend %rr-transition-3;
+        }
+    }
+
+    &__socail-media {
+        gap: 20px;
+        display: flex;
+        list-style: none;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        opacity: 0;
+        visibility: hidden;
+        padding: 12px 20px;
+        @extend %rr-transition-3;
+        transform: translateX(100%);
+        background-color: var(--rr-common-white);
+
+        li {
+            a {
+
+                &:hover {
+                    svg [fill="#080A0B"]{
+                        fill: var(--rr-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        margin-top: -75px;
+        padding: 29px 20px 29px;
+        left: 25px;
+        z-index: 11;
+        @extend %rr-transition-3;
+        position: relative;
+        width: calc(100% - 50px);
+        background: var(--rr-common-white);
+        box-shadow: 0px 30px 60px rgba(17, 22, 31, 0.1);
+        
+
+        &-text {
+            text-align: center;
+        }
+    }
+}

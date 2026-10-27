@@ -1,0 +1,58 @@
+@use '../../utils' as *;
+
+.text-slider-2 {
+
+  &__section-space{
+    padding: 30px 0;
+    background-color: var(--rr-theme-primary);
+  }
+
+  &__slider {
+    .carouselTicker {
+      margin: 0;
+      padding: 0;
+      margin-left: calc(-100vw/2 + 100%/2);
+      margin-right: calc(-100vw/2 + 100%/2);
+
+      &__wrap {
+        overflow: inherit !important;
+      }
+
+      &__list {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        list-style: none;
+        margin-left: -10px;
+        margin-right: -10px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        li {
+          float: left;
+          padding-left: 20px;
+          padding-right: 20px;
+
+          .title {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: var(--rr-fw-sbold);
+            color: var(--rr-common-white);
+            text-transform: uppercase;
+            cursor: pointer;
+
+            @media #{$xs} {
+              font-size: 25px;
+            }
+          }
+
+          img {
+            margin-top: 10px;
+            animation: spin 4S infinite;
+          }
+        }
+      }
+    }
+  }
+}

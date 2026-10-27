@@ -1,0 +1,290 @@
+@use '../../utils' as *;
+
+// banner-10 css
+
+.banner-10 {
+    &__wrapper {
+        padding-top: 240px;
+        padding-bottom: 96px;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @media #{$lg, $md,$sm,$xs} {
+            padding-top: 160px;
+            padding-bottom: 96px;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            background: red;
+
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__info {
+        .sub-title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: #FFFFFF;
+            font-family: var(--rr-ff-heading-2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18.5px;
+            display: inline-block;
+            padding: 7px 15px;
+            margin: 0;
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 150px;
+            line-height: 150px;
+            letter-spacing: -0.07em;
+            color: #FFFFFF;
+            font-family: var(--rr-ff-heading-2);
+            margin-bottom: 20px;
+            margin-top: 12px;
+            @media #{$lg, $md} {
+                font-size: 110px;
+                line-height: 116px;
+            }
+            @media #{$sm} {
+                font-size: 84px;
+                line-height: 91px;
+            }
+            @media #{$xs} {
+                font-size: 50px;
+                line-height: 56px;
+            }
+            
+            @media #{$md,$sm,$xs} {
+                & br{
+                    display: none;
+                }
+            }
+            & span {
+                font-family: "Tartuffo_Trial-Regular";
+                font-weight: 400;
+            }
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            margin-bottom: 0;
+            max-width: 496px;
+            @media #{$md,$sm,$xs} {
+               max-width: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 62px;
+        @media #{$md,$sm,$xs} {
+            margin-top: 40px;
+        }
+        .rr-btn {
+            background: #FFFFFF;
+            border-radius: 44px;
+            padding: 11.5px 29.5px;
+            display: inline-flex;
+
+            .text-one {
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+                color: #111111;
+                font-family: var(--rr-ff-body);
+
+                & i {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .text-two {
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                text-transform: uppercase;
+                color: #111111;
+                font-family: var(--rr-ff-body);
+
+                & i {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        margin-top: 119px;
+        @media #{$md,$sm,$xs} {
+            margin-top: 0;
+        }
+        .decs {
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 36px;
+            letter-spacing: -0.05em;
+            color: #FFFFFF;
+            font-family: var(--rr-ff-heading-2);
+            margin-bottom: 0;
+            @media #{$lg, $md,$sm,$xs} {
+                font-size: 30px;
+                line-height: 34px;
+            }
+            & span {
+                font-family: "Tartuffo_Trial-Regular";
+                text-decoration: underline;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__thumb {
+        max-height: 338px;
+        border-radius: 30px;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            max-height: 338px;
+        }
+    }
+
+    &__box {
+        margin-right: -175px;
+        margin-top: 45px;
+        @media #{$md,$sm,$xs} {
+            margin-right: 0;
+        }
+    }
+
+    .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 19px;
+        gap: 20px;
+        .hero-10-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .rr-button {
+                border: 1px solid #FFFFFF;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                & i{
+                    color: #FFFFFF;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+            }
+        }
+
+        .hero-10-counter {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            color: #fff;
+            font-family: var(--rr-ff-heading-2);
+
+            .current,
+            .total {
+                font-weight: 600;
+                font-size: 70px;
+                line-height: 70px;
+                letter-spacing: -0.05em;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                font-family: var(--rr-ff-heading-2);                
+            }
+
+            .line {
+                width: 414px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.3);
+                display: inline-block;
+                @media #{$xxl} {
+                    width: 300px;
+                }
+                @media #{$xl} {
+                    width: 200px;
+                }
+                @media #{$lg} {
+                    width: 128px;
+                }
+                @media #{$sm} {
+                    width: 300px;
+                }
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+        transition: background-image 0.4s ease-in-out;
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: inherit;
+          background-size: cover;
+          background-position: center;
+          transform: scale(1);
+          animation: heroZoom 6s ease forwards;
+          z-index: 1;
+          background: rgba(17, 17, 17, 0.3);
+        }
+      
+        &.bg-animating::before {
+          animation: heroZoom 6s ease forwards;
+        }
+      }
+      
+      @keyframes heroZoom {
+        0% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(1.12);
+          opacity: 1;
+        }
+      }
+}

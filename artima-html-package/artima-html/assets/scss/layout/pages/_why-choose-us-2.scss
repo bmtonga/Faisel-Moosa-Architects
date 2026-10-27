@@ -1,0 +1,86 @@
+@use '../../utils' as *;
+
+.why-choose-us-2 {
+    background-color: #F8F4F1;
+    overflow: hidden;
+    position: relative;
+
+    &__media {
+        
+        img {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            width: calc(50% - 80px);
+            background-size: cover;
+
+            @media #{$md, $sm, $xs} {
+                position: static;
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+
+    &__content {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+
+
+        @media #{$md} {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @media #{$sm,$xs} {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @media #{$xs} {
+            flex-direction: column;
+            align-items: self-start;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include border-radius(500px);
+        background-color: var(--rr-theme-primary);
+
+        i {
+            color: var(--rr-common-white);
+            font-size: 40px;
+            font-weight: 300;
+        }
+    }
+
+    &__text {
+
+        h6 {
+
+        }
+
+        p {
+
+        }
+    }
+}

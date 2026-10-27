@@ -1,0 +1,105 @@
+@use '../../utils' as *;
+
+.error {
+
+    &__text {
+
+        .rr-btn {
+            padding: 13.5px 21px;
+        }
+    }
+    
+}
+
+.box {
+
+    &__content {
+        position: relative;
+
+        .has--overlay {
+            background-color: var(--rr-theme-primary);
+            height: calc(100% - 40px);
+            position: absolute;
+            top: 20px;
+            width: calc(100% - 40px);
+            left: 20px;
+            right: 20px;
+            bottom: -20px;
+            opacity: 0;
+            -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;
+            transition: transform .3s ease-out, opacity .3s ease-out;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            top: 15px;
+            bottom: 15px;
+            left: 8px;
+            right: 8px;
+            border-width: 2px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            opacity: 0;
+            -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;
+            transition: transform .3s ease-out, opacity .3s ease-out;
+            content: "";
+            position: absolute;
+            
+        }
+
+        &::after {
+            top: 8px;
+            bottom: 8px;
+            left: 15px;
+            right: 15px;
+
+            border-width: 2px;
+            border-style: solid;
+            border-top: none;
+            border-bottom: none;
+            opacity: 0;
+            -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+            -webkit-transition: -webkit-transform .3s ease-out, opacity .3s ease-out;
+            transition: transform .3s ease-out, opacity .3s ease-out;
+            content: "";
+            position: absolute;
+        }
+
+        &:hover {
+
+            &::before {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                overflow: visible;
+                border-color: red;
+            }
+
+            &::after {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                overflow: visible;
+                border-color: red;
+            }
+            .has--overlay {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                overflow: visible;
+            }
+        }
+    }
+}
+

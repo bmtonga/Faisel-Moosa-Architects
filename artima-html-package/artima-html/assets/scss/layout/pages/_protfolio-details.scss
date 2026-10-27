@@ -1,0 +1,105 @@
+@use '../../utils' as *;
+
+.protfolio-details {
+
+    &__info {
+        padding: 35px 40px;
+        padding-right: 82px;
+        background-color: #F8F8F8;
+        display: inline-block;
+        position: absolute;
+        bottom: 40px;
+        right: 0;
+
+        &-date {
+            gap: 10px;
+            display: flex;
+            margin-bottom: 30px;
+            align-items: center;
+
+            i {
+                font-size: 12px;
+                color: var(--rr-theme-primary);
+            }
+        }
+
+        &-list {
+
+            &__item {
+                gap: 8px;
+                display: flex;
+                font-weight: 600;
+                align-items: center;
+                text-transform: uppercase;
+                color: var(--rr-heading-primary);
+                font-family: var(--rr-ff-heading);
+
+                span {
+                    font-weight: 400;
+                    color: var(--rr-text-body);
+                    font-family: var(--rr-ff-body);
+                    text-transform: capitalize;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    &__content {
+
+        img {
+            width: auto;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                gap: 20px;
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--rr-heading-primary);
+
+                @media #{$md, $sm, $xs} {
+                   align-items: baseline;
+                   gap: 10px;
+                }
+            }
+        }
+    }
+
+    &__media {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    &__media-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+}
+
+.related-project  {
+
+    &__media {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+    }
+}

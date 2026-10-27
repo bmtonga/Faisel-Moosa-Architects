@@ -1,0 +1,55 @@
+@use '../../utils' as *;
+.brand-slider {
+    margin: 0px 120px;
+
+    @media #{$lg} {
+        margin: 0px 100px; 
+    }
+    @media #{$md} {
+        margin: 0px 60px; 
+    }
+    @media #{$sm} {
+        margin: 0px 30px; 
+    }
+    @media #{$xs} {
+        margin: 0px 20px; 
+    }
+
+    &__slider {
+        .carouselTicker {
+          margin: 0;
+          padding: 0;
+          margin-left: calc(-100vw/2 + 100%/2);
+          margin-right: calc(-100vw/2 + 100%/2);
+    
+          &__list {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            list-style: none;
+            margin-left: -10px;
+            margin-right: -10px;
+            align-items: center;
+            justify-content: center;
+            gap: 90px;
+            display: flex;
+
+            @media #{$lg} {
+                gap: 50px;
+            }
+            @media #{$md} {
+                gap: 40px;
+            }
+            @media #{$sm, $xs} {
+                gap: 20px;
+            }
+    
+            li {
+              float: left;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+          }
+        }
+    }
+}

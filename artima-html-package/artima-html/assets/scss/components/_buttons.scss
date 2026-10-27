@@ -1,0 +1,194 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 buttons
+/*----------------------------------------*/
+
+// Common button
+.rr-btn__header {
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    padding: 10.5px 29.5px;
+    background-color: var(--rr-theme-primary);
+    color: var(--rr-common-white);
+    font-family: var(--rr-common-white);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .btn-wrap {
+        z-index: 1;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border: none;
+
+        .text-one, .text-two {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-one {
+            position: relative;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+
+        .text-two {
+            position: absolute;
+            top: 100%;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+    }
+
+    &:hover, &:focus {
+        .text-one {
+            @include transform(translateY(-150%));
+        }
+        .text-two {
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+
+    &-secondary {
+        padding: 10.5px 28px;
+        background: var(--rr-theme-secondary);
+    }
+
+    &-space-2 {
+        padding: 10.5px 34.5px;
+
+        .btn-wrap {
+            .text-one, .text-two {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.rr-btn {
+    @include border-radius(0px);
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    padding: 16.5px 33.4px;
+    background-color: var(--rr-theme-primary);
+    color: var(--rr-common-white);
+    font-family: var(--rr-ff-robo);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .btn-wrap {
+        z-index: 1;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border: none;
+
+        i {
+            padding-left: 6px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        svg {
+            margin-left: 6px;
+        }
+
+        .text-one, .text-two {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-one {
+            position: relative;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+
+        .text-two {
+            position: absolute;
+            top: 100%;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+    }
+
+    &__transparent {
+        background: transparent;
+        border: 1px solid rgba(21, 24, 27, 0.1);
+
+        .btn-wrap {
+            .text-one, .text-two {
+                color: var(--rr-heading-primary);
+            }
+        }
+    }
+
+    &__white {
+        padding: 15.5px 32.4px;
+        background: var(--rr-common-white);
+
+        .btn-wrap {
+            .text-one, .text-two {
+                color: var(--rr-heading-primary);
+            }
+        }
+    }
+
+    &__white-transparent {
+        background: transparent;
+        padding: 15.5px 32.4px;
+        border: 1px solid var(--rr-common-white);
+
+        .btn-wrap {
+            .text-one, .text-two {
+                color: var(--rr-common-white);
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        .text-one {
+            @include transform(translateY(-150%));
+        }
+        .text-two {
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+}

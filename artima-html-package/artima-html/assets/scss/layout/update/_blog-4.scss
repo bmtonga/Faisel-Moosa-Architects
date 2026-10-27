@@ -1,0 +1,69 @@
+@use '../../utils' as *;
+
+.blog-4 {
+
+    &__item {
+        position: relative;
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(8, 10, 11, 0.00) 44.36%, #080A0B 100%);
+        }
+
+        &-media {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-content {
+            z-index: 2;
+            left: 30px;
+            bottom: 43px;
+            position: absolute;
+
+            @media #{$xs} {
+                left: 10px;
+                bottom: 30px;
+            }
+        }
+
+        &__meta {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            li {
+                color: var(--rr-common-white);
+                font-size: 14px;
+                font-weight: var(--rr-fw-medium);
+            }
+        }
+
+        &:hover {
+
+            .blog-4 {
+
+                &__item {
+
+                    &-media {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

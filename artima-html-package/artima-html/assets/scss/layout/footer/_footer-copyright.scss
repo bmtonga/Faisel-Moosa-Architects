@@ -1,0 +1,73 @@
+@use '../../utils' as *;
+
+.footer {
+
+	&__copyright {
+		p {
+            font-size: 16px;
+			font-weight: 400;
+			line-height: 26px;
+			font-style: normal;
+			color: rgb(255 255 255 / 70%);
+
+			a {
+                color: var(--rr-common-white);
+                opacity: 100%;
+                font-weight: var(--rr-fw-bold);
+				&:hover {
+					color: var(--rr-theme-primary)
+				}
+			}
+		}
+	}
+
+	&__copyright-menu {
+		ul {
+			@include flexbox;
+			gap: 20px;
+			justify-content: end;
+			@media #{$xs, $sm, $md} {
+				gap: 15px;
+				flex-wrap: wrap;
+				margin-top: 10px;
+				justify-content: center;
+			}
+
+			li {
+				list-style: none;
+				position: relative;
+
+				&::before {
+					content: "";
+					right: -10px;
+					width: 1px;
+					height: 14px;
+					position: absolute;
+					top: calc(50% + 0.5px);
+					@extend %rr-transition-3;
+					transform: translateY(-50%);
+					background-color: rgb(255 255 255 / 70%);
+				}
+
+				&.no_bullet {
+					&:before {
+						display: none;
+					}
+				}
+
+				a {
+					color: rgb(255 255 255 / 70%);
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 26px;
+                    @extend %rr-transition-3;
+
+					&:hover {
+						color: var(--rr-theme-primary);
+					}
+				}
+			}
+		}
+	}
+}

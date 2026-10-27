@@ -1,0 +1,117 @@
+@use '../../utils' as *;
+
+.recent-project {
+    overflow: hidden;
+
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-slide-active {
+        
+        .recent-project {
+            &__item {
+                margin-top: 68px;
+            }
+
+            &__arrow {
+                transform: translateY(0px);
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &__media {
+
+                &::before {
+                    height: 100%;
+                }
+            }
+
+            &__text {
+                a {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    &__slider {
+        &__arrow {
+
+            gap: 10px;
+    
+            &-prev, &-next {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #080A0B;
+                @include border-radius(500px);
+                
+                &:hover {
+                    background-color: var(--rr-theme-primary);
+                    border-color: transparent;
+
+                    svg [stroke="#080A0B"]{
+                        stroke: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        @extend %rr-transition-3;
+    }
+
+    &__media {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @extend %rr-transition-3;
+            background-color: rgb(8 10 11 / 70%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %rr-transition-3;
+        }
+    }
+
+    &__arrow {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @include border-radius(500px);
+        background-color: var(--rr-theme-primary);
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        @extend %rr-transition-3;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(120px);
+
+        &:hover {
+            background-color: var(--rr-common-white);
+
+            svg [stroke="white"]{
+                stroke: var(--rr-heading-primary);
+            }
+        }
+    }
+
+
+    &__text {
+        margin-top: 25px;
+    }
+}

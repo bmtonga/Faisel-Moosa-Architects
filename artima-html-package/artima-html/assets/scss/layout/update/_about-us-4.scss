@@ -1,0 +1,108 @@
+@use '../../utils' as *;
+.about-us-4 {
+
+    &__content {
+        max-width: 582px;
+
+        @media #{$lg, $md, $sm, $xs} {
+           max-width: 100%;
+        }
+    }
+
+    &__wrapper {
+        max-width: 520px;
+
+        @media #{$lg, $md, $sm, $xs} {
+            max-width: 100%;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 21px;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+        
+        @media #{$xxs} {
+            flex-direction: column;
+        }
+    }
+
+    .rr-btn {
+        padding: 13.5px 34.4px;
+    }
+
+    &__box {
+        top: 26px;
+        width: 313px;
+        right: -34px;
+        height: 284px;
+        padding: 25px 40px;
+        position: absolute;
+        border: 4px solid rgba(144, 110, 80, 0.30);
+        background-color: var(--rr-common-white);
+
+        @media #{$xs} {
+            position: inherit;
+            right: inherit;
+            width: 280px
+        }
+
+        h6 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+
+            @media #{$xs} {
+                margin-bottom: 10px;
+            }
+        }
+
+        h4 {
+            position: relative;
+            display: inline-block;
+
+            &::before {
+                top: -32px;
+                content: "";
+                width: 90px;
+                right: -28px;
+                height: 90px;
+                position: absolute;
+                @include border-radius(500px);
+                background: rgba(144, 110, 80, 0.10);
+            }
+            span {
+                font-size: 80px;
+                line-height: 90px;
+                font-family: var(--rr-ff-heading);
+
+                @media #{$xs} {
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+            }
+        }
+    }
+
+    &__media {
+        padding-left: 94px;
+        position: relative;
+
+        @media #{$lg, $md, $sm, $xs} {
+            padding-left: 0;
+        }
+        @media #{$md, $sm, $xs} {
+            margin-top: 50px;
+        }
+
+        img {
+            @media #{$xs} {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

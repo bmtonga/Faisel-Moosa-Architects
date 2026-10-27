@@ -1,0 +1,83 @@
+@use '../../utils' as *;
+
+.client-slider {
+
+    &__item {
+        padding: 40px 30px;
+        position: relative;
+        background: #FAF7F5;
+        box-shadow: 0px 1px 3px 0px rgba(8, 10, 11, 0.10);
+
+        p {
+            font-size: 20px;
+            line-height: 32px;
+            @media #{$xs} {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        @media #{$xs} {
+            padding: 40px 20px;
+        }
+    }
+
+    &__author {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+
+        &-media {
+            width: 60px;
+            height: 60px;
+            @include border-radius(500px);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-text {
+            h6 {
+                font-weight: 600;
+                line-height: 30px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    &__quite {
+        position: absolute;
+        bottom: 40px;
+        right: 30px;
+    }
+
+    &__slider {
+        &__arrow {
+            gap: 10px;
+    
+            &-prev, &-next {
+                width: 50px;
+                height: 50px;
+                border: 1px solid var(--rr-theme-primary);
+                @include border-radius(500px);
+                color: var(--rr-theme-primary);
+                
+                &:hover {
+                    background-color: var(--rr-theme-primary);
+                    border-color: transparent;
+                    color: var(--rr-common-white);
+                }
+            }
+        }
+    }
+}

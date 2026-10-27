@@ -1,0 +1,235 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 header-common
+/*----------------------------------------*/
+.header-9 {
+	padding: 0;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+    padding: 0 50px;
+    @media #{$lg,$md,$sm,$xs} {
+        padding: 0 15px;
+    }
+	&.rr-sticky {
+		background-color: var(--rr-common-white);
+	}
+
+	@media (min-width: 1400px) {
+	
+		.container,
+		.container-lg,
+		.container-md,
+		.container-sm,
+		.container-xl,
+		.container-xxl {
+			max-width: 1626px;
+		}
+	}
+
+	.header {
+
+		&__logo {
+			img {
+				@media #{$xs} {
+					max-width: 120px;
+				}
+			}
+		}
+
+		&__main {
+
+			.mean {
+				&__menu-wrapper {
+					margin-left: auto;
+				}
+			}
+			.main-menu {
+                margin-right: 51px;
+				ul {
+					 li {
+						 @media (max-width:1199px) {
+							 &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)) {
+								 display: none;
+							 }
+						 }
+					 }
+				}
+			}
+			
+		}
+
+		&__hamburger {
+			.sidebar__toggle {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.bar-icon {
+				width: 65px;
+				height: 12px;
+				span {
+					background-color: #D9D9D9;
+					height: 2px;
+				}
+			}
+		}
+	}
+    .header__btn-wrap{
+        .rr-btn__header{
+            background: #111111;
+            border-radius: 22.5px;
+            padding: 12px 28px;
+            .text-one{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                color: var(--rr-common-white);
+                font-family: var(--rr-ff-heading-2);
+                & i{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px; 
+                }             
+            }
+            .text-two{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                color: var(--rr-common-white);
+                font-family: var(--rr-ff-heading-2);
+                & i{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px; 
+                }             
+            }
+        }
+    }
+}
+
+.header-10 {
+	padding: 0;
+	background: #FFFFFF;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(7px);
+	border-radius: 15px;	
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+    padding: 23.5px 25px;
+	max-width: 593px;
+	margin: 30px auto 0 auto;
+    @media #{$lg,$md,$sm,$xs} {
+        padding: 0 15px;
+		margin: 10px auto 0 auto;
+		left: 15px;
+		right: 15px;
+    }
+	&.rr-sticky {
+		background-color: var(--rr-common-white);
+	}
+
+	@media (min-width: 1400px) {
+	
+		.container,
+		.container-lg,
+		.container-md,
+		.container-sm,
+		.container-xl,
+		.container-xxl {
+			max-width: 1626px;
+		}
+	}
+
+	.header {
+
+		&__logo {
+			img {
+				@media #{$xs} {
+					max-width: 120px;
+				}
+			}
+		}
+
+		&__main {
+
+			.mean {
+				&__menu-wrapper {
+					margin-left: auto;
+				}
+			}
+			.main-menu {
+                margin-right: 51px;
+				ul {
+					 li {
+						 @media (max-width:1199px) {
+							 &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)) {
+								 display: none;
+							 }
+						 }
+					 }
+				}
+			}
+			
+		}
+
+		&__hamburger {
+			.sidebar__toggle {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			// .bar-icon {
+			// 	width: 65px;
+			// 	height: 12px;
+			// 	span {
+			// 		background-color: #D9D9D9;
+			// 		height: 2px;
+			// 	}
+			// }
+		}
+	}
+    .header__btn-wrap{
+        .rr-btn__header{
+            background: #111111;
+            border-radius: 22.5px;
+            padding: 12px 28px;
+            .text-one{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                color: var(--rr-common-white);
+                font-family: var(--rr-ff-heading-2);
+                & i{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px; 
+                }             
+            }
+            .text-two{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+                color: var(--rr-common-white);
+                font-family: var(--rr-ff-heading-2);
+                & i{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px; 
+                }             
+            }
+        }
+    }
+}

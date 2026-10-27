@@ -1,0 +1,97 @@
+@use '../../utils' as *;
+
+.services {
+    
+    &__space {
+        background-color: #F8F4F1;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    &__shape {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -30px);
+    }
+
+    &__left {
+        &-content {
+            padding-right: 105px;
+            text-align: right;
+
+            @media #{$lg, $md, $sm, $xs} {
+                padding-right: 0;
+            }
+    
+            @media #{$md, $sm, $xs} {
+                text-align: left;
+            }
+            &__item {
+                h5 {
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 40px;
+                    padding-bottom: 40px;
+                    border-bottom: 1px solid rgba(144, 110, 80, 0.30);
+
+                    @media #{$xs} {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+    &__right {
+        &-content {
+            padding-left: 105px;
+            text-align: left;
+            @media #{$lg, $md, $sm, $xs} {
+                padding-left: 0;
+            }
+    
+            &__item {
+                h5 {
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 40px;
+                    padding-bottom: 40px;
+                    border-bottom: 1px solid rgba(144, 110, 80, 0.30);
+
+                    @media #{$xs} {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__media {
+        overflow: hidden;
+        margin-left: -20px;
+        margin-right: -20px;
+
+        @media #{$lg, $md, $sm, $xs} {
+           margin-left: 0;
+           margin-right: 0;
+        }
+
+        @media #{$md, $sm, $xs} {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include border-radius(500px);
+        }
+    }
+}

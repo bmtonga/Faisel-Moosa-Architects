@@ -1,0 +1,104 @@
+@use '../../utils' as *;
+
+.protfolio {
+
+    &__tab {
+        gap: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        justify-content: center;
+
+        @media #{$xs} {
+            gap: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--rr-heading-primary);
+            border-bottom: 1px solid transparent;
+            text-transform: capitalize;
+
+            &.active {
+            color: var(--rr-theme-primary);
+            border-color: var(--rr-theme-primary);
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        margin-bottom: 30px;
+
+        &::before {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            position: absolute;
+            @extend %rr-transition-3;
+            background-color: rgb(8 10 11 / 70%);
+        }
+
+        &-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-icon {
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            opacity: 0;
+            position: absolute;
+            @extend %rr-transition-3;
+            transform: translate(-50%, -50%);
+        }
+
+        &-text {
+            left: 40px;
+            opacity: 0;
+            bottom: 35px;
+            position: absolute;
+            visibility: hidden;
+            @extend %rr-transition-3;
+            transform: translate(0, 100px);
+            span {
+                font-size: 14px;
+                color: var(--rr-theme-primary);
+            }
+
+            h6 {
+                font-weight: var(--rr-fw-sbold);
+                color: var(--rr-common-white);
+            }
+        }
+
+        &:hover {
+            &::before {
+                height: 100%;
+            }
+            .protfolio {
+
+                &__item {
+
+                    
+                    &-text {
+                        transform: translate(0, 0);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    &-icon {
+                        z-index: 1;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
