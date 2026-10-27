@@ -402,32 +402,6 @@ svg path {
   object-fit: cover;
 }
 
-/* === Tartuffo Trial scss (index 02) === */
-@font-face {
-  font-family: "Tartuffo_Trial-Regular";
-  src: url("/assets/fonts/Tartuffo_Trial-RegularItalic.otf");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Tartuffo_Trial-Regular";
-  src: url("/assets/fonts/Tartuffo_Trial-Thin.otf");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "Tartuffo_Trial-Regular";
-  src: url("/assets/fonts/Tartuffo_Trial-Light.otf");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Tartuffo_Trial-Light";
-  src: url("/assets/fonts/Tartuffo_Trial-Light.otf");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Tartuffo_Trial-Thin";
-  src: url("/assets/fonts/Tartuffo_Trial-Thin.otf");
-  font-weight: 100;
-}
 :root {
   /**
   @font family declaration
