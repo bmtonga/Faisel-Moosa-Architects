@@ -8363,7 +8363,7 @@ body .ui-tooltip {
   background-position: 50% 50%;
   background-size: cover;
   display: inline-block;
-  transition: 0.6s;
+  transition: 1s cubic-bezier(0.22, 0.61, 0.36, 1);
   opacity: 1;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 1400px) and (max-width: 1600px) {
@@ -8616,7 +8616,7 @@ body .ui-tooltip {
   opacity: 0;
   font-weight: var(--rr-fw-sbold);
   text-transform: capitalize;
-  animation: animate 1s ease-in-out 1 forwards;
+  animation: animate 1.4s ease-in-out 1 forwards;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .banner-4__content-title {
@@ -8631,7 +8631,7 @@ body .ui-tooltip {
   margin-top: 20px;
   margin-bottom: 50px;
   color: rgba(255, 255, 255, 0.8);
-  animation: animate 1s ease-in-out 0.3s 1 forwards;
+  animation: animate 1.4s ease-in-out 0.4s 1 forwards;
 }
 @media (max-width: 575px) {
   .banner-4__content .des {
@@ -8645,7 +8645,7 @@ body .ui-tooltip {
   align-items: center;
   gap: 10px;
   opacity: 0;
-  animation: animate 1s ease-in-out 0.3s 1 forwards;
+  animation: animate 1.4s ease-in-out 0.4s 1 forwards;
 }
 @media (max-width: 575px) {
   .banner-4__content__btn-box {

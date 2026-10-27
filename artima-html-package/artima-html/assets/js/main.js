@@ -1051,7 +1051,7 @@
         let slideContainer = document.querySelector('.banner-4__slide');
         let items = document.querySelectorAll('.banner-4__item');
         let autoplayInterval;
-        const autoplayDelay = 4000;
+        const autoplayDelay = 8000;
         const mobileWidth = 768;
 
         if (!next || !prev || !slideContainer || items.length === 0) {
