@@ -106,11 +106,13 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Scroll-progress circle: gold ring (main.js draws the ring with --rr-theme-primary) */
 #scroll-percentage {
-  --rr-theme-primary: var(--fma-gold);
+  --rr-theme-primary: var(--fma-gold);      /* ring fill */
+  --rr-heading-primary: #3a3431;            /* ring track (unfilled part) */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 #scroll-percentage-value {
-  color: var(--fma-gold-light);
+  background-color: #080a0b;                /* solid centre: the number never sits on the gold fill */
+  color: var(--fma-gold-light);             /* 13:1 on the dark centre (WCAG AA/AAA) */
 }
 
 /* Hero slider: gold arrows, taupe on hover; thin taupe frame on the thumbnails */
@@ -121,9 +123,24 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .banner-4__button button:hover {
   background-color: var(--fma-taupe);
-  color: #fff;
+  color: #080a0b;                           /* 6.4:1 on taupe (white would be a marginal 3.1:1) */
   transform: translateY(-2px);
 }
 .banner-4__item:nth-child(n+3) {
   box-shadow: 0 0 0 1px var(--fma-taupe);
+}
+
+/* ---- WCAG AA contrast fixes (template defaults fell just short) ---- */
+:root {
+  --rr-text-body: #666666;                  /* was #767676: 4.15:1 on the off-white panels; now ≥5.2:1 */
+}
+/* Active / hovered nav link: template brown on black was 4.28:1; logo gold is 10.9:1 */
+.main-menu ul li.active > a,
+.main-menu ul li:hover > a,
+.main-menu ul li > a:hover {
+  color: var(--fma-gold);
+}
+/* Breadcrumb banners: dim the photo so white titles stay ≥ 4.5:1 whatever the image */
+.breadcrumb__background {
+  filter: brightness(0.5);
 }
