@@ -50,14 +50,14 @@ class ContactForm {
 }
 
 
-$recipient = "ahmmedsabbirbd@gmail.com";
-$fromName = "RRDevs";
-$fromEmail = "hellow@rrdevs.net";
+$recipient = "creativityandflair@gmail.com";
+$fromName = "Faisel Moosa Architects website";
+$fromEmail = "no-reply@faiselmoosaarchitects.com";
 
 $contactForm = new ContactForm($recipient, $fromName, $fromEmail);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = strip_tags(trim($_POST["fname"]." ". $_POST["lname"]));
+    $name = strip_tags(trim(($_POST["fname"] ?? "") . " " . ($_POST["lname"] ?? "")));
     $name = str_replace(array("\r","\n"),array(" "," "),$name);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $subject = trim($_POST["subject"]);
