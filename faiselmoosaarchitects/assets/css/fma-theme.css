@@ -1,5 +1,6 @@
 /*-----------------------------------------------------------------------------------
-    Faisel Moosa Architects – home page refinements layered over Artima's main.css.
+    Faisel Moosa Architects – site-wide refinements layered over Artima's main.css.
+    Loaded on every page after main.css.
 -----------------------------------------------------------------------------------*/
 
 /* Work process cards: project photo fades in behind the dark hover state */
@@ -24,3 +25,8 @@
   position: relative;
   z-index: 1;
 }
+
+/* Contact form labels (contact-us.html) */
+.contact__form-label { display: block; margin-bottom: 8px; font-family: var(--rr-ff-heading); font-size: 14px; font-weight: 500; color: var(--rr-heading-primary); }
+.contact__form-label span { color: var(--rr-theme-primary); }
+.contact__form-input-select { margin-bottom: 30px; }

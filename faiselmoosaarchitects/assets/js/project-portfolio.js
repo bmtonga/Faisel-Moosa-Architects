@@ -1,25 +1,25 @@
 /*-----------------------------------------------------------------------------------
-    Project portfolio grid for index-4.html ("Latest projects" section).
+    Project portfolio grid on index.html ("Projects" section).
     Reuses the Isotope + imagesLoaded plugins already loaded by Artima, but targets
-    .project-portfolio-4__grid (not .grid) so main.js's fitRows setup is untouched.
+    .project-portfolio__grid (not .grid) so main.js's fitRows setup is untouched.
     Image popups use the .popup-image Magnific Popup gallery initialised in main.js.
 -----------------------------------------------------------------------------------*/
 (function ($) {
     "use strict";
 
     $(function () {
-        var $grid = $('.project-portfolio-4__grid');
+        var $grid = $('.project-portfolio__grid');
         if (!$grid.length || typeof $.fn.isotope !== 'function') {
             return;
         }
 
         var isoOptions = {
-            itemSelector: '.project-portfolio-4__item',
+            itemSelector: '.project-portfolio__item',
             percentPosition: true,
             layoutMode: 'masonry',
             masonry: {
-                columnWidth: '.project-portfolio-4__sizer',
-                gutter: '.project-portfolio-4__gutter'
+                columnWidth: '.project-portfolio__sizer',
+                gutter: '.project-portfolio__gutter'
             }
         };
 
@@ -38,7 +38,7 @@
             $(window).on('load', relayout);
         }
 
-        $('.project-portfolio-4__filter').on('click', 'button', function (event) {
+        $('.project-portfolio__filter').on('click', 'button', function (event) {
             event.preventDefault();
             var $btn = $(this);
             $iso.isotope({ filter: $btn.attr('data-filter') });
