@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
     <link rel="stylesheet" href="assets/css/plugins/carouselTicker.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/project-portfolio-4.css">
 </head>
 
 <body class="body-1">
@@ -798,7 +799,7 @@
     <!-- work-process end -->
 
     <!-- latest-project-3 start -->
-    <section class="latest-project-3 section-space__bottom">
+    <section class="latest-project-3 project-portfolio-4 section-space__bottom">
         <div class="container">
             <div class="row mb-60  justify-content-center align-items-center">
                 <div class="col-lg-6">
@@ -809,7 +810,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="d-flex justify-content-lg-end justify-content-start">
-                        <a href="service-details.html" class="rr-btn">
+                        <a href="protfolio.html" class="rr-btn">
                             <span class="btn-wrap">
                                 <span class="text-one">view All Projects</span>
                                 <span class="text-two">view All Projects</span>
@@ -819,73 +820,178 @@
                 </div>
             </div>
 
-            <div class="row mb-minus-30">
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-1.jpg" alt="image not found">
+            <!-- Category filters (buttons drive the Isotope masonry grid below; see assets/js/project-portfolio-4.js) -->
+            <div class="project-portfolio-4__filter" role="group" aria-label="Filter projects by category">
+                <button type="button" data-filter="*" class="active">All</button>
+                <button type="button" data-filter=".residential">Residential</button>
+                <button type="button" data-filter=".commercial">Commercial</button>
+                <button type="button" data-filter=".interior">Interior</button>
+                <button type="button" data-filter=".public">Public</button>
+            </div>
+
+            <!--
+                PROJECT CONTENT TO BE SUPPLIED
+                The cards below use Artima demo photos and placeholder text. For each project replace:
+                  - the category class on the <article> (residential | commercial | interior | public)
+                  - the badge text, image src/alt (keep images under assets/imgs/), popup href
+                  - the project title, location/description line, and the detail-page link
+            -->
+            <div class="project-portfolio-4__grid">
+                <div class="project-portfolio-4__sizer"></div>
+                <div class="project-portfolio-4__gutter"></div>
+
+                <article class="project-portfolio-4__item residential">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Residential</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-1.jpg" alt="Project 1 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-1.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-4.jpg" alt="image not found">
+                </article>
+
+                <article class="project-portfolio-4__item commercial">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Commercial</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-2.jpg" alt="Project 2 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-2.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-2.jpg" alt="image not found">
+                </article>
+
+                <article class="project-portfolio-4__item interior">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Interior</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-6.jpg" alt="Project 3 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-6.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-5.jpg" alt="image not found">
+                </article>
+
+                <article class="project-portfolio-4__item public">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Public</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-3.jpg" alt="Project 4 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-3.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-3.jpg" alt="image not found">
+                </article>
+
+                <article class="project-portfolio-4__item residential interior">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Residential</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-7.jpg" alt="Project 5 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-7.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                    <div class="latest-project-3__item">
-                        <div class="latest-project-3__media">
-                            <img src="./assets/imgs/update/latest-project-3/latest-project-6.jpg" alt="image not found">
+                </article>
+
+                <article class="project-portfolio-4__item commercial">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Commercial</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-4.jpg" alt="Project 6 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-4.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="latest-project-3__content">
-                            <h5><a href="service-details.html">D-Orex Home Interior</a></h5>
-                            <p class="mb-0">Artima is one of the most popular for</p>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
                         </div>
-                        <a class="read-more" href="service-details.html"><i class="fa-solid fa-arrow-down-long"></i></a>
                     </div>
-                </div>
+                </article>
+
+                <article class="project-portfolio-4__item interior">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Interior</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-12.jpg" alt="Project 7 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-12.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-portfolio-4__item public">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Public</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-5.jpg" alt="Project 8 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-5.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-portfolio-4__item residential">
+                    <div class="project-portfolio-4__card">
+                        <div class="project-portfolio-4__media">
+                            <span class="project-portfolio-4__badge">Residential</span>
+                            <img src="./assets/imgs/update-2/Projects/project-8-img-8.jpg" alt="Project 9 – image to be supplied">
+                            <div class="project-portfolio-4__links">
+                                <a href="./assets/imgs/update-2/Projects/project-8-img-8.jpg" class="popup-image" aria-label="View larger image"><i class="fa-regular fa-expand"></i></a>
+                                <a href="protfolio-details.html" aria-label="View project details"><i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-portfolio-4__caption">
+                            <h5><a href="protfolio-details.html">Project title (to be supplied)</a></h5>
+                            <p class="mb-0">Location and short description to be supplied</p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -1358,6 +1464,7 @@
 <script src="assets/js/vendor/ajax-form.js"></script>
 <script src="assets/js/plugins/TextPlugin.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/project-portfolio-4.js"></script>
 <script src="assets/js/plugins/magiccursor.js"></script>
 </body>
 
