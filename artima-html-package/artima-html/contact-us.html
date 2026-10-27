@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/project-portfolio-4.css">
+    <style>
+        .contact__form-label { display: block; margin-bottom: 8px; font-family: var(--rr-ff-heading); font-size: 14px; font-weight: 500; color: var(--rr-heading-primary); }
+        .contact__form-label span { color: var(--rr-theme-primary); }
+        .contact__form-input-select { margin-bottom: 30px; }
+    </style>
 </head>
 
 <body class="body-1">
@@ -224,25 +229,29 @@
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="contact__form-input">
-                                    <input name="lname" id="lname" type="text" placeholder="Name" required>
+                                    <label for="lname" class="contact__form-label">Name <span aria-hidden="true">*</span></label>
+                                    <input name="lname" id="lname" type="text" placeholder="e.g. Chanda Mwila" autocomplete="name" required>
                                 </div>
                             </div>
                             <div class="col-xl-6">
                                 <div class="contact__form-input">
-                                    <input name="email" id="email" type="email" placeholder="Email" required>
+                                    <label for="email" class="contact__form-label">Email <span aria-hidden="true">*</span></label>
+                                    <input name="email" id="email" type="email" placeholder="e.g. chanda@example.com" autocomplete="email" required>
                                 </div>
                             </div>
 
                             <div class="col-xl-6">
                                 <div class="contact__form-input">
-                                    <input name="tel" id="tel" type="tel" placeholder="Phone">
+                                    <label for="tel" class="contact__form-label">Phone</label>
+                                    <input name="tel" id="tel" type="tel" placeholder="e.g. +260 97 123 4567" autocomplete="tel">
                                 </div>
                             </div>
 
                             <div class="col-xl-6">
                                 <div class="contact__form-input-select d-flex flex-column">
+                                    <label for="subject" class="contact__form-label">Subject</label>
                                     <select name="subject" id="subject" style="display: none;">
-                                        <option value="General enquiry">Subject</option>
+                                        <option value="General enquiry">General enquiry</option>
                                         <option value="Architecture Design">Architecture Design</option>
                                         <option value="Interior Design">Interior Design</option>
                                         <option value="Project Management">Project Management</option>
@@ -254,8 +263,9 @@
 
                             <div class="col-sm-12">
                                 <div class="contact__form-input">
+                                    <label for="textarea" class="contact__form-label">Message <span aria-hidden="true">*</span></label>
                                     <div class="validation__wrapper-up position-relative">
-                                        <textarea name="textarea" id="textarea" placeholder="Tell us about your project" required></textarea>
+                                        <textarea name="textarea" id="textarea" placeholder="e.g. We are planning a four-bedroom house in Ibex Hill and would like to discuss design and planning approval." required></textarea>
                                     </div>
                                 </div>
                             </div>
