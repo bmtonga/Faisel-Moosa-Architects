@@ -30,3 +30,34 @@
 .contact__form-label { display: block; margin-bottom: 8px; font-family: var(--rr-ff-heading); font-size: 14px; font-weight: 500; color: var(--rr-heading-primary); }
 .contact__form-label span { color: var(--rr-theme-primary); }
 .contact__form-input-select { margin-bottom: 30px; }
+
+/* Home hero: fit the viewport instead of a fixed 950px, so the headline and
+   buttons sit within the first screen on any desktop (the header overlays
+   the top of the hero, hence the small downward nudge). */
+@media (min-width: 992px) {
+  .banner-4 {
+    height: 100vh;
+    min-height: 680px;
+    max-height: 950px;
+  }
+  .banner-4__content {
+    margin-top: 30px;
+  }
+  .banner-4__content .des {
+    margin-bottom: 35px;
+  }
+}
+@media (min-width: 1200px) {
+  /* arrows sit under the thumbnail strip (centred at 50%) rather than a fixed
+     distance from the hero's bottom edge */
+  .banner-4__button {
+    top: calc(50% + 175px);
+    bottom: auto;
+  }
+}
+@media (min-width: 1400px) {
+  .banner-4__content-title {
+    font-size: 72px;
+    line-height: 1.15;
+  }
+}
