@@ -64,7 +64,7 @@
   display: block;
   width: 100%;
   height: auto;
-  transition: transform 0.6s ease-out 0s;
+  transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
 }
 .project-portfolio-4__media::after {
   content: "";
@@ -75,7 +75,7 @@
   height: 0;
   opacity: 0;
   background: rgba(8, 10, 11, 0.7);
-  transition: all 0.3s ease-out 0s;
+  transition: height 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0s, opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
 }
 .project-portfolio-4__badge {
   position: absolute;
@@ -113,10 +113,10 @@
   background-color: var(--rr-common-white);
   opacity: 0;
   transform: scale(0.6);
-  transition: all 0.3s ease-out 0s;
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s, transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s, color 0.3s, background-color 0.3s;
 }
 .project-portfolio-4__links a:nth-child(2) {
-  transition-delay: 0.08s;
+  transition-delay: 0.3s, 0.3s, 0s, 0s;
 }
 .project-portfolio-4__links a:hover {
   color: var(--rr-common-white);
