@@ -75,3 +75,55 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 32px rgba(0, 0, 0, 0.18);
 }
+
+/* ---- Logo colours ---- */
+:root {
+  --fma-gold: #e8ba55;
+  --fma-gold-dark: #d4a53d;
+  --fma-gold-light: #f6cc6d;
+  --fma-taupe: #a48d86;
+}
+
+/* Page scrollbar in logo colours */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fma-gold) #080a0b;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #080a0b;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--fma-gold-light), var(--fma-gold-dark));
+  border-radius: 10px;
+  border: 2px solid #080a0b;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--fma-taupe);
+}
+
+/* Scroll-progress circle: gold ring (main.js draws the ring with --rr-theme-primary) */
+#scroll-percentage {
+  --rr-theme-primary: var(--fma-gold);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+#scroll-percentage-value {
+  color: var(--fma-gold-light);
+}
+
+/* Hero slider: gold arrows, taupe on hover; thin taupe frame on the thumbnails */
+.banner-4__button button {
+  background-color: var(--fma-gold);
+  color: #080a0b;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s ease;
+}
+.banner-4__button button:hover {
+  background-color: var(--fma-taupe);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.banner-4__item:nth-child(n+3) {
+  box-shadow: 0 0 0 1px var(--fma-taupe);
+}
