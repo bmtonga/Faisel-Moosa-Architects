@@ -149,3 +149,16 @@ body::-webkit-scrollbar-thumb:hover {
 #about, #services, #projects {
   scroll-margin-top: 150px;
 }
+
+/* Off-canvas sidebar: blur and dim the page behind it while it is open */
+.offcanvas__overlay {
+  background: rgba(8, 10, 11, 0.55);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
+}
+.offcanvas__overlay.overlay-open {
+  opacity: 1;                               /* dimming comes from the rgba background, so the blur is at full strength */
+  -webkit-backdrop-filter: blur(12px) saturate(0.85);
+  backdrop-filter: blur(12px) saturate(0.85);
+}
