@@ -199,3 +199,35 @@ body::-webkit-scrollbar-thumb:hover {
   border-color: #dddddd;
   outline: none;
 }
+
+/* Lightbox close button: use Magnific Popup's own "×" only (the template's
+   Font Awesome overlay produced a second, offset icon) */
+.mfp-close::after {
+  content: none;
+}
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close,
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 34px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.85;
+  text-align: center;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+.mfp-close:hover,
+.mfp-close:focus {
+  opacity: 1;
+}
+/* The lightbox must sit above the fixed header (z-index 9999), or its close
+   button and top edge are unclickable */
+.mfp-bg {
+  z-index: 10001;
+}
+.mfp-wrap {
+  z-index: 10002;
+}
