@@ -252,11 +252,11 @@ body::-webkit-scrollbar-thumb:hover {
 /* Anchor the text block to a fixed baseline (instead of vertically centring it) so
    the buttons sit in the same place on every slide and a longer headline simply
    grows upward – no reserved blank lines. The active item is the 250px thumbnail
-   centred in the hero; -127px puts the buttons where the centred layout had them. */
+   centred in the hero; -77px centres the text block on the thumbnail + arrows group. */
 @media (min-width: 1200px) {
   .banner-4__item:nth-child(2) .banner-4__content {
     top: auto;
-    bottom: -127px;
+    bottom: -77px;
     transform: none;
     margin-top: 0;
   }
