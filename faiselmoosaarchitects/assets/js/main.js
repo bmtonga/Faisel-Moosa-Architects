@@ -308,11 +308,10 @@
         $(this).parent().addClass('active');
         e.preventDefault();
     });
-    $(window).on('scroll', function () {
-        scrNav();
-    });
-
+    // Scroll-spy for the section links lives in assets/js/fma-site.js (this
+    // template routine only added the active class and never cleared it).
     function scrNav() {
+        return;
         var sTop = $(window).scrollTop();
         $('section').each(function () {
             var id = $(this).attr('id'),
@@ -324,7 +323,6 @@
             }
         });
     }
-    scrNav();
 
     /*======================================
     Smoth animatio Js
