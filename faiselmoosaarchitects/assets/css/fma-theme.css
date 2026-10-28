@@ -255,10 +255,11 @@ body::-webkit-scrollbar-thumb:hover {
    centred in the hero; -77px centres the text block on the thumbnail + arrows group. */
 @media (min-width: 1200px) {
   .banner-4__item:nth-child(2) .banner-4__content {
-    top: auto;
-    bottom: -77px;
+    top: -0.22em;        /* headline cap-height meets the thumbnail's top edge (offsets the line-height leading) */
+    bottom: auto;
     transform: none;
     margin-top: 0;
+    font-size: 60px;     /* em reference for the offset = headline size */
   }
 }
 @media (prefers-reduced-motion: reduce) {
