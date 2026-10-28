@@ -234,3 +234,44 @@ body::-webkit-scrollbar-thumb:hover {
 .mfp-wrap {
   z-index: 10002;
 }
+
+/* ---- Hero slider: cinematic image slide-in, stable layout, reduced-motion ---- */
+/* The slide-in is the item position transition (thumbnail -> active -> background) */
+.banner-4__item {
+  transition: top 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              left 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              right 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              width 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              height 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-radius 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: top, left, width, height, opacity;
+  backface-visibility: hidden;
+}
+/* Headline and description reserve three lines each so the buttons never move between slides */
+@media (min-width: 992px) {
+  .banner-4__content-title {
+    min-height: calc(3 * 1.15em);
+  }
+  .banner-4__content .des {
+    min-height: 90px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .banner-4__item,
+  .banner-4__content-title,
+  .banner-4__content .des,
+  .banner-4__content__btn-box {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+/* 1200–1399px: keep every headline within three lines so the buttons stay put */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .banner-4__content-title {
+    font-size: 54px;
+    line-height: 1.15;
+  }
+}

@@ -1049,7 +1049,8 @@
         let slideContainer = document.querySelector('.banner-4__slide');
         let items = document.querySelectorAll('.banner-4__item');
         let autoplayInterval;
-        const autoplayDelay = 8000;
+        const autoplayDelay = 6500;                       // long enough to read each slide
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const mobileWidth = 768;
 
         if (!next || !prev || !slideContainer || items.length === 0) {
@@ -1071,7 +1072,7 @@
         }
 
         function startAutoplay() {
-            if (!isMobileDevice()) {
+            if (!isMobileDevice() && !reduceMotion) {
                 autoplayInterval = setInterval(goToNextSlide, autoplayDelay);
             }
         }
