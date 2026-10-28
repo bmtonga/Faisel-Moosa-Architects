@@ -4,6 +4,9 @@
 -----------------------------------------------------------------------------------*/
 
 /* Work process cards: project photo fades in behind the dark hover state */
+.work-process__item {
+  overflow: hidden;                         /* clip the resting 1.08 zoom so nothing bleeds past the card */
+}
 .work-process__item::before {
   transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
