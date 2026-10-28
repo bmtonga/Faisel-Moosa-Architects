@@ -60,7 +60,7 @@
 }
 @media (min-width: 1400px) {
   .banner-4__content-title {
-    font-size: 72px;
+    font-size: 60px;      /* every slide's headline fits two lines in Outfit (longest line 678px of 717px) */
     line-height: 1.15;
   }
 }
@@ -274,7 +274,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* 1200–1399px: keep every headline within three lines so the buttons stay put */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .banner-4__content-title {
-    font-size: 54px;
+    font-size: 50px;
     line-height: 1.15;
   }
 }
