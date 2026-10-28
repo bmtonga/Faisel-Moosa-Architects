@@ -1049,7 +1049,7 @@
         let slideContainer = document.querySelector('.banner-4__slide');
         let items = document.querySelectorAll('.banner-4__item');
         let autoplayInterval;
-        const autoplayDelay = 6500;                       // long enough to read each slide
+        const autoplayDelay = 9000;                       // long enough to read each slide
         const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const mobileWidth = 768;
 

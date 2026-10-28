@@ -238,14 +238,14 @@ body::-webkit-scrollbar-thumb:hover {
 /* ---- Hero slider: cinematic image slide-in, stable layout, reduced-motion ---- */
 /* The slide-in is the item position transition (thumbnail -> active -> background) */
 .banner-4__item {
-  transition: top 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              left 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              right 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              width 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              height 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1),
-              border-radius 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: top 2s cubic-bezier(0.22, 1, 0.36, 1),
+              left 2s cubic-bezier(0.22, 1, 0.36, 1),
+              right 2s cubic-bezier(0.22, 1, 0.36, 1),
+              width 2s cubic-bezier(0.22, 1, 0.36, 1),
+              height 2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 2s cubic-bezier(0.22, 1, 0.36, 1),
+              border-radius 2s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: top, left, width, height, opacity;
   backface-visibility: hidden;
 }
