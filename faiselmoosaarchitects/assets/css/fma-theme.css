@@ -249,13 +249,14 @@ body::-webkit-scrollbar-thumb:hover {
   will-change: top, left, width, height, opacity;
   backface-visibility: hidden;
 }
-/* Headline and description reserve three lines each so the buttons never move between slides */
+/* Headline and description reserve two lines each (their natural length in Outfit)
+   so the buttons never move between slides */
 @media (min-width: 992px) {
   .banner-4__content-title {
-    min-height: calc(3 * 1.15em);
+    min-height: calc(2 * 1.15em);
   }
   .banner-4__content .des {
-    min-height: 90px;
+    min-height: 60px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
