@@ -10,7 +10,7 @@ Static site for Faisel Moosa Architects, Lusaka. Built on the Artima HTML templa
 | `index.html` | Home: hero, About, Services, counters, Work Process, Projects grid, Founder, footer. Nav links are in-page anchors (`#about`, `#services`, `#projects`). |
 | `contact-us.html` | Contact details, enquiry form (posts to `mail.php`), map. |
 | `project-<slug>.html` | One page per project (13). **Generated** – do not edit by hand; see Tools. |
-| `mail.php` | Form mailer. Requires a PHP host; recipient is set near the bottom of the file. |
+| `mail.php` | Contact form handler (PHP 8.2, PHPMailer over SMTP). All settings come from environment variables – see **Contact form** below. |
 
 ## Folders
 
@@ -33,8 +33,14 @@ assets/
     home/, contact-us/, experience/   Icons and shapes used by the home and contact pages
   fonts/                  Font Awesome Pro webfonts
   scss/                   Artima's Sass source (not built; kept for a future main.css trim)
+src/
+  Env.php                 Reads settings from the environment (falls back to a local .env file)
+  ContactMailer.php       Builds and sends the enquiry email with PHPMailer
+vendor/                   Composer dependencies (not committed – run `composer install`)
 tools/
   build_projects.py       Regenerates all project-*.html pages and relinks the home-page cards
+composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
+.env.example              Mail settings template; copy to .env locally (never commit .env)
 ```
 
 ## Conventions
@@ -59,6 +65,43 @@ or adding photos under `assets/imgs/portfolio/<slug>/`:
 ```
 python3 tools/build_projects.py
 ```
+
+## Contact form
+
+`contact-us.html` posts to `mail.php`, which validates the fields, drops honeypot
+submissions, and sends the enquiry by SMTP with PHPMailer. **The PHP code is the same
+everywhere; only the mail settings differ**, and they are read from environment
+variables (`MAIL_HOST`, `MAIL_PORT`, `MAIL_ENCRYPTION`, `MAIL_USERNAME`,
+`MAIL_PASSWORD`, `MAIL_FROM_ADDRESS`, `MAIL_FROM_NAME`, `MAIL_TO_ADDRESS`,
+`MAIL_SUBJECT_PREFIX`). Real environment variables always take priority; a `.env`
+file in the site root is only a fallback for local development.
+
+### Run locally (PHP 8.2+, Composer, Mailpit)
+
+```
+composer install                 # installs PHPMailer into vendor/
+copy .env.example .env           # Windows   (cp on macOS/Linux) – defaults point at Mailpit
+mailpit                          # SMTP on :1025, inbox UI on http://localhost:8025
+php -S localhost:8000            # from the site root, then open http://localhost:8000/contact-us.html
+```
+
+Submit the form; the email appears in Mailpit instead of a real inbox. Nothing is
+sent externally. (Mailpit: https://mailpit.axllent.org – a single binary, or
+`winget install axllent.mailpit` / `brew install mailpit`.)
+
+### Deploy
+
+Upload the site **including `vendor/`** (or run `composer install --no-dev` on the
+server), do **not** upload `.env`, and set the `MAIL_*` variables in the host's
+environment-variable settings (cPanel/Hostinger "Environment variables", Apache
+`SetEnv`, a Docker `env_file`, …). A Gmail/Google Workspace example is in
+`.env.example`: host `smtp.gmail.com`, port 587, `tls`, and an App Password – never
+the account password. `MAIL_FROM_ADDRESS` must be a sender the SMTP host allows;
+the visitor's address goes in Reply-To.
+
+Responses are plain text with HTTP status codes (200 sent, 422 validation,
+405 wrong method, 500 mail failure); `assets/js/vendor/ajax-form.js` shows the
+text under the form. Set `MAIL_DEBUG=1` locally to log the SMTP transcript.
 
 ## Content sources
 
