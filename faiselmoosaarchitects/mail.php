@@ -17,11 +17,20 @@ declare(strict_types=1);
 use App\ContactMailer;
 use App\Env;
 
-require __DIR__ . '/vendor/autoload.php';
-
 header('Content-Type: text/plain; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
+
+// Never leak PHP notices/stack traces into the response; they go to the error log.
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+
+if (!is_file(__DIR__ . '/vendor/autoload.php')) {
+    error_log('[contact-form] vendor/autoload.php missing – run "composer install" in ' . __DIR__);
+    http_response_code(500);
+    exit('The contact form is not fully installed on this server (missing dependencies). Please email us directly.');
+}
+require __DIR__ . '/vendor/autoload.php';
 
 Env::load(__DIR__);
 
