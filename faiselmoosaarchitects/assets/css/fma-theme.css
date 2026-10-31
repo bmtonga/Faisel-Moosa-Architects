@@ -204,6 +204,15 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10002;
 }
 
+/* With four slides the second thumbnail (4th item) would sit under the first; on
+   desktop push it to the template's 5th-item spot so it peeks in, cut off at the
+   right edge, like the Artima Home 4 demo. */
+@media (min-width: 1200px) {
+  .banner-4__item:nth-child(4) {
+    left: 97%;
+  }
+}
+
 /* ---- Hero slider: cinematic image slide-in, reduced-motion (layout and type follow the template) ---- */
 /* The slide-in is the item position transition (thumbnail -> active -> background) */
 .banner-4__item {
