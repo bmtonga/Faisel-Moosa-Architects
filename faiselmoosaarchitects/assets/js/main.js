@@ -1051,14 +1051,9 @@
         let autoplayInterval;
         const autoplayDelay = 9000;                       // long enough to read each slide
         const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const mobileWidth = 768;
 
         if (!next || !prev || !slideContainer || items.length === 0) {
             return;
-        }
-
-        function isMobileDevice() {
-            return window.innerWidth <= mobileWidth;
         }
 
         function goToNextSlide() {
@@ -1072,7 +1067,9 @@
         }
 
         function startAutoplay() {
-            if (!isMobileDevice() && !reduceMotion) {
+            // autoplay on every screen size (template paused it on mobile); still off for reduced-motion users
+            clearInterval(autoplayInterval);
+            if (!reduceMotion) {
                 autoplayInterval = setInterval(goToNextSlide, autoplayDelay);
             }
         }
@@ -1094,13 +1091,7 @@
 
         startAutoplay();
 
-        window.addEventListener('resize', function () {
-            if (isMobileDevice()) {
-                stopAutoplay();
-            } else {
-                startAutoplay();
-            }
-        });
+
     });
 
 
