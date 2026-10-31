@@ -213,6 +213,21 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
+/* Mobile: no slide thumbnails at all – just the full-bleed background and the
+   active slide's text. The active item keeps its box (the text is positioned
+   from it) but loses its image; the upcoming items are hidden. */
+@media (max-width: 767px) {
+  .banner-4__item:nth-child(2) {
+    background-image: none !important;   /* overrides the inline data-background */
+  }
+  .banner-4__item:nth-child(n+3) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: none;
+  }
+}
+
 /* ---- Hero slider: cinematic image slide-in, reduced-motion (layout and type follow the template) ---- */
 /* The slide-in is the item position transition (thumbnail -> active -> background) */
 .banner-4__item {
