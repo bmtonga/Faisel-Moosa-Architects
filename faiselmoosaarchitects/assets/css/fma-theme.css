@@ -34,37 +34,6 @@
 .contact__form-label span { color: var(--rr-theme-primary); }
 .contact__form-input-select { margin-bottom: 30px; }
 
-/* Home hero: fit the viewport instead of a fixed 950px, so the headline and
-   buttons sit within the first screen on any desktop (the header overlays
-   the top of the hero, hence the small downward nudge). */
-@media (min-width: 992px) {
-  .banner-4 {
-    height: 100vh;
-    min-height: 680px;
-    max-height: 950px;
-  }
-  .banner-4__content {
-    margin-top: 30px;
-  }
-  .banner-4__content .des {
-    margin-bottom: 35px;
-  }
-}
-@media (min-width: 1200px) {
-  /* arrows sit under the thumbnail strip (centred at 50%) rather than a fixed
-     distance from the hero's bottom edge */
-  .banner-4__button {
-    top: calc(50% + 175px);
-    bottom: auto;
-  }
-}
-@media (min-width: 1400px) {
-  .banner-4__content-title {
-    font-size: 60px;      /* every slide's headline fits two lines in Outfit (longest line 678px of 717px) */
-    line-height: 1.15;
-  }
-}
-
 /* Header at rest (before scrolling): frosted glass over the hero instead of
    fully transparent. Once scrolled, main.js adds .rr-sticky and the bar turns
    solid as before. */
@@ -235,7 +204,7 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10002;
 }
 
-/* ---- Hero slider: cinematic image slide-in, stable layout, reduced-motion ---- */
+/* ---- Hero slider: cinematic image slide-in, reduced-motion (layout and type follow the template) ---- */
 /* The slide-in is the item position transition (thumbnail -> active -> background) */
 .banner-4__item {
   transition: top 2s cubic-bezier(0.22, 1, 0.36, 1),
@@ -249,19 +218,6 @@ body::-webkit-scrollbar-thumb:hover {
   will-change: top, left, width, height, opacity;
   backface-visibility: hidden;
 }
-/* Anchor the text block to a fixed baseline (instead of vertically centring it) so
-   the buttons sit in the same place on every slide and a longer headline simply
-   grows upward – no reserved blank lines. The active item is the 250px thumbnail
-   centred in the hero; -77px centres the text block on the thumbnail + arrows group. */
-@media (min-width: 1200px) {
-  .banner-4__item:nth-child(2) .banner-4__content {
-    top: -0.22em;        /* headline cap-height meets the thumbnail's top edge (offsets the line-height leading) */
-    bottom: auto;
-    transform: none;
-    margin-top: 0;
-    font-size: 60px;     /* em reference for the offset = headline size */
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .banner-4__item,
   .banner-4__content-title,
@@ -272,14 +228,6 @@ body::-webkit-scrollbar-thumb:hover {
     animation-iteration-count: 1 !important;
   }
 }
-/* 1200–1399px: keep every headline within three lines so the buttons stay put */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .banner-4__content-title {
-    font-size: 50px;
-    line-height: 1.15;
-  }
-}
-
 /* Contact form honeypot (bot trap) – off-screen, never shown */
 .contact__form-honeypot {
   position: absolute;
