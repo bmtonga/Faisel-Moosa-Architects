@@ -204,6 +204,17 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10002;
 }
 
+/* Desktop: lift the slide text, thumbnails and arrows 60px so there is less
+   empty space between the header and the headline. */
+@media (min-width: 1200px) {
+  .banner-4__item:nth-child(n+2) {
+    top: calc(50% - 60px);
+  }
+  .banner-4__button {
+    bottom: 295px;                 /* template 235px + 60px */
+  }
+}
+
 /* With four slides the second thumbnail (4th item) would sit under the first; on
    desktop push it to the template's 5th-item spot so it peeks in, cut off at the
    right edge, like the Artima Home 4 demo. */
