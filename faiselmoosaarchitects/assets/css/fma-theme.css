@@ -205,17 +205,17 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* Desktop: a slightly shorter hero (860px instead of 950px) with the slide text,
-   thumbnails and arrows lifted 110px, so the headline starts ~90px below the
+   thumbnails and arrows lifted 150px, so the headline starts ~90px below the
    header instead of ~235px. */
 @media (min-width: 1200px) {
   .banner-4 {
     height: 860px;
   }
   .banner-4__item:nth-child(n+2) {
-    top: calc(50% - 110px);
+    top: calc(50% - 150px);
   }
   .banner-4__button {
-    bottom: 300px;                 /* keeps the arrows under the lifted thumbnails */
+    bottom: 340px;                 /* keeps the arrows under the lifted thumbnails */
   }
 }
 
