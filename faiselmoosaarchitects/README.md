@@ -39,6 +39,7 @@ src/
 vendor/                   Composer dependencies (not committed – run `composer install`)
 tools/
   build_projects.py       Regenerates all project-*.html pages and relinks the home-page cards
+  build_blog.py           Writes the "Latest Articles" slider on index.html and the blog-*.html pages
 composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
 .env.example              Mail settings template; copy to .env locally (never commit .env)
 ```
@@ -65,6 +66,18 @@ or adding photos under `assets/imgs/portfolio/<slug>/`:
 ```
 python3 tools/build_projects.py
 ```
+
+Blog posts live in the `POSTS` list in `tools/build_blog.py` (title, category, date,
+excerpt, body). Each post needs `assets/imgs/blog/<slug>.jpg` (1300x634), `<slug>-card.jpg`
+(820x400) and `<slug>-thumb.jpg` (160x160). Rebuild the home-page slider and the
+`blog-<slug>.html` pages with:
+
+```
+python3 tools/build_blog.py
+```
+
+Run `build_blog.py` before `build_projects.py` whenever the header or footer on
+`index.html` changes, so every generated page picks up the new chrome.
 
 ## Contact form
 

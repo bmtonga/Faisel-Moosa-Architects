@@ -32,7 +32,7 @@ def chrome():
     foot = INDEX[INDEX.index('<footer>'):]
     for part in ('top', 'foot'):
         pass
-    fix = lambda t: re.sub(r'href="#(about|services|projects(?:-[a-z]+)?)"', r'href="index.html#\1"', t)
+    fix = lambda t: re.sub(r'href="#(about|services|projects(?:-[a-z]+)?|blog)"', r'href="index.html#\1"', t)
     top = fix(top).replace('<li class="active"><a href="index.html">Home</a></li>', '<li><a href="index.html">Home</a></li>') \
                   .replace('<li class="has-dropdown">\n                                        <a href="index.html#projects">Projects</a>', '<li class="has-dropdown active">\n                                        <a href="index.html#projects">Projects</a>')
     foot = fix(foot)
