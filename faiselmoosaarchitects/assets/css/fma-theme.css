@@ -161,8 +161,17 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 5;
   background: linear-gradient(to bottom, rgba(236, 230, 226, 0) 0%, rgba(236, 230, 226, 0.55) 60%, #ece6e2 100%);
 }
-.about-us-4 {
+.banner-4 + .about-us-4 {
   background: linear-gradient(to bottom, #ece6e2 0%, #f8f4f1 40%, #ffffff 100%);
+}
+/* About page: founder block on a flat warm grey, photo cut-out without the years box */
+.fma-founder {
+  background-color: #f7f4f1;
+}
+.fma-founder .about-us-4__media img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
 }
 
 /* Contact form: 1px #ddd border on the active field, eased over 220ms */
@@ -320,3 +329,11 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
 }
 
+
+/* ---- Call-to-action band (about page) ---- */
+.fma-cta {
+  background-color: #080a0b;
+}
+.fma-cta .section-2__subtitle {
+  color: var(--fma-gold);
+}

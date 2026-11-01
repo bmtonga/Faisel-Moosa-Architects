@@ -40,6 +40,8 @@ vendor/                   Composer dependencies (not committed – run `composer
 tools/
   build_projects.py       Regenerates all project-*.html pages and relinks the home-page cards
   build_blog.py           Writes the "Latest Articles" slider on index.html and the blog-*.html pages
+  build_pages.py          Builds standalone pages (about-us.html) from tools/pages/*.html partials
+  pages/                  <main> partials for the standalone pages
 composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
 .env.example              Mail settings template; copy to .env locally (never commit .env)
 ```
@@ -76,8 +78,16 @@ excerpt, body). Each post needs `assets/imgs/blog/<slug>.jpg` (1300x634), `<slug
 python3 tools/build_blog.py
 ```
 
-Run `build_blog.py` before `build_projects.py` whenever the header or footer on
-`index.html` changes, so every generated page picks up the new chrome.
+Standalone pages such as `about-us.html` are built from a `<main>` partial in
+`tools/pages/` (edit the partial, not the generated file):
+
+```
+python3 tools/build_pages.py
+```
+
+Whenever the header or footer on `index.html` changes, run all three generators
+(`build_pages.py`, `build_blog.py`, `build_projects.py`) so every page picks up the
+new chrome; `contact-us.html` is maintained by hand.
 
 ## Contact form
 
