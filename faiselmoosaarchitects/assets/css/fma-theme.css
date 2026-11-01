@@ -337,3 +337,303 @@ body::-webkit-scrollbar-thumb:hover {
 .fma-cta .section-2__subtitle {
   color: var(--fma-gold);
 }
+
+/* =====================================================================
+   About page (about-us.html) – editorial sections. Namespaced .fma-*,
+   built on the template's type scale, colours and spacing utilities.
+   ===================================================================== */
+.fma-checklist {
+  margin: 0;
+}
+
+/* --- Journey timeline --- */
+.fma-journey {
+  background-color: #f7f4f1;
+}
+.fma-timeline {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 860px;
+  position: relative;
+}
+.fma-timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 96px;
+  width: 1px;
+  background-color: rgba(8, 10, 11, 0.14);
+}
+.fma-timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  column-gap: 56px;
+  padding-bottom: 44px;
+}
+.fma-timeline__item:last-child {
+  padding-bottom: 0;
+}
+.fma-timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 91px;
+  top: 9px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid var(--fma-gold-dark);
+}
+.fma-timeline__item--now::before {
+  background-color: var(--fma-gold-dark);
+}
+.fma-timeline__year {
+  font-family: var(--rr-ff-heading);
+  font-size: 22px;
+  font-weight: var(--rr-fw-sbold);
+  color: var(--rr-heading-primary);
+  line-height: 1.3;
+  text-align: right;
+}
+.fma-timeline__title {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.fma-timeline__title a {
+  color: inherit;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+.fma-timeline__title a:hover,
+.fma-timeline__title a:focus-visible {
+  color: var(--rr-theme-primary);
+  background-size: 100% 1px;
+}
+.fma-timeline__body p {
+  margin-bottom: 0;
+  max-width: 560px;
+}
+@media (max-width: 767px) {
+  .fma-timeline::before { left: 5px; }
+  .fma-timeline__item {
+    grid-template-columns: 1fr;
+    padding-left: 32px;
+    padding-bottom: 36px;
+  }
+  .fma-timeline__item::before { left: 0; }
+  .fma-timeline__year {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+}
+
+/* --- Editorial split (philosophy, how we work) --- */
+.fma-split--grey {
+  background-color: #f7f4f1;
+}
+.fma-split__media {
+  overflow: hidden;
+}
+.fma-split__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fma-split__media:hover img {
+  transform: scale(1.04);
+}
+.fma-split__content {
+  padding: 30px 0;
+}
+@media (min-width: 992px) {
+  .order-lg-1 .fma-split__content { padding-right: 40px; }
+  .order-lg-2 ~ .order-lg-1 .fma-split__content { padding-right: 40px; }
+  .col-lg-6:not(.order-lg-1):not(.order-lg-2) .fma-split__content { padding-left: 40px; }
+}
+
+/* --- What we do: numbered list --- */
+.fma-services__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(8, 10, 11, 0.12);
+}
+.fma-services__item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  column-gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(8, 10, 11, 0.12);
+}
+.fma-services__num {
+  font-family: var(--rr-ff-heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--rr-theme-primary);
+  padding-top: 6px;
+}
+.fma-services__title {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+@media (max-width: 575px) {
+  .fma-services__item { grid-template-columns: 44px 1fr; column-gap: 16px; padding: 22px 0; }
+  .fma-services__title { font-size: 20px; }
+}
+
+/* --- Core values: four equal cards --- */
+.fma-values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.fma-values__card {
+  position: relative;
+  padding: 40px 32px 36px;
+  border: 1px solid rgba(8, 10, 11, 0.12);
+  background-color: #ffffff;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.fma-values__card:hover,
+.fma-values__card:focus-within {
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow: 0 24px 40px rgba(8, 10, 11, 0.08);
+}
+.fma-values__num {
+  display: block;
+  font-family: var(--rr-ff-heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--rr-theme-primary);
+  margin-bottom: 22px;
+}
+.fma-values__title {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+@media (max-width: 1199px) {
+  .fma-values__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+  .fma-values__grid { grid-template-columns: 1fr; gap: 20px; }
+  .fma-values__card { padding: 30px 24px 28px; }
+}
+
+/* --- How we work: numbered steps + figures --- */
+.fma-steps {
+  list-style: none;
+  counter-reset: fma-step;
+  margin: 0;
+  padding: 0;
+}
+.fma-steps li {
+  position: relative;
+  counter-increment: fma-step;
+  padding-left: 52px;
+  margin-bottom: 26px;
+}
+.fma-steps li:last-child { margin-bottom: 0; }
+.fma-steps li::before {
+  content: counter(fma-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 3px;
+  font-family: var(--rr-ff-heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--rr-theme-primary);
+}
+.fma-steps__title {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.fma-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 70px 0 0;
+  padding-top: 50px;
+  border-top: 1px solid rgba(8, 10, 11, 0.12);
+}
+.fma-stats__item dt {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--rr-text-body);
+  margin-bottom: 10px;
+}
+.fma-stats__item dd {
+  font-family: var(--rr-ff-heading);
+  font-size: 56px;
+  line-height: 1;
+  font-weight: var(--rr-fw-sbold);
+  color: var(--rr-heading-primary);
+  margin: 0;
+}
+.fma-stats__item dd.fma-stats__text {
+  font-size: 20px;
+  line-height: 1.4;
+  padding-top: 6px;
+}
+@media (max-width: 991px) {
+  .fma-stats { grid-template-columns: repeat(2, 1fr); margin-top: 50px; padding-top: 40px; }
+  .fma-stats__item dd { font-size: 44px; }
+}
+
+/* --- Founder --- */
+.fma-founder__role {
+  font-family: var(--rr-ff-heading);
+  font-size: 18px;
+  color: var(--rr-theme-primary);
+  margin-bottom: 18px;
+}
+
+/* --- Photo band: Designing beyond today --- */
+.fma-band {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+  background-color: #080a0b;
+}
+.fma-band__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.fma-band__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 10, 11, 0.55) 0%, rgba(8, 10, 11, 0.25) 60%, rgba(8, 10, 11, 0.1) 100%);
+}
+.fma-band .container { position: relative; }
+.fma-band__panel {
+  background-color: rgba(8, 10, 11, 0.86);
+  padding: 50px 48px;
+  color: rgba(255, 255, 255, 0.84);
+}
+.fma-band__panel .section-2__subtitle { color: var(--fma-gold); }
+.fma-band__panel p { color: rgba(255, 255, 255, 0.84); }
+@media (max-width: 767px) {
+  .fma-band { padding: 70px 0; }
+  .fma-band__panel { padding: 36px 24px; }
+}
+
+/* Keyboard focus on the about-page links and cards */
+.fma-timeline__title a:focus-visible,
+.fma-values__card:focus-visible,
+.fma-services__item a:focus-visible {
+  outline: 2px solid var(--fma-gold-dark);
+  outline-offset: 3px;
+}
