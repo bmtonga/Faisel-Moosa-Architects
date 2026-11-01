@@ -41,6 +41,7 @@ tools/
   build_projects.py       Regenerates all project-*.html pages and relinks the home-page cards
   build_blog.py           Writes the "Latest Articles" slider on index.html and the blog-*.html pages
   build_pages.py          Builds standalone pages (about-us.html) from tools/pages/*.html partials
+  build_services.py       Generates the four service-*.html pages from its SERVICES list
   pages/                  <main> partials for the standalone pages
 composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
 .env.example              Mail settings template; copy to .env locally (never commit .env)
@@ -85,9 +86,16 @@ Standalone pages such as `about-us.html` are built from a `<main>` partial in
 python3 tools/build_pages.py
 ```
 
-Whenever the header or footer on `index.html` changes, run all three generators
-(`build_pages.py`, `build_blog.py`, `build_projects.py`) so every page picks up the
-new chrome; `contact-us.html` is maintained by hand.
+Service pages (`service-<slug>.html`) come from the `SERVICES` list in
+`tools/build_services.py`; images live in `assets/imgs/services/`:
+
+```
+python3 tools/build_services.py
+```
+
+Whenever the header or footer on `index.html` changes, run all four generators
+(`build_pages.py`, `build_services.py`, `build_blog.py`, `build_projects.py`) so every
+page picks up the new chrome; `contact-us.html` is maintained by hand.
 
 ## Contact form
 

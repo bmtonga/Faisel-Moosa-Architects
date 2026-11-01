@@ -637,3 +637,25 @@ body::-webkit-scrollbar-thumb:hover {
   outline: 2px solid var(--fma-gold-dark);
   outline-offset: 3px;
 }
+
+/* ---- Service pages ---- */
+.sidebar__widget-service a.active {
+  color: var(--rr-theme-primary);
+}
+.service-details__information-item h3 svg {
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+.fma-services__title a {
+  color: inherit;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+.fma-services__title a:hover,
+.fma-services__title a:focus-visible {
+  color: var(--rr-theme-primary);
+  background-size: 100% 1px;
+}
