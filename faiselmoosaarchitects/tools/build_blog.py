@@ -4,7 +4,9 @@ generates one blog-<slug>.html page per post, using index.html's header/footer.
 
 Run from the site root, after any header/footer change on index.html:
     python3 tools/build_blog.py
-Edit POSTS below to add, remove or rewrite a post. Each post needs
+Edit POSTS below to add, remove or rewrite a post. Keep every title to ~30-36
+characters and every excerpt to ~120-125 characters so the three cards stay the
+same height (the CSS also clamps them to 2 and 3 lines). Each post needs
 assets/imgs/blog/<slug>.jpg (1300x634), <slug>-card.jpg (820x400) and
 <slug>-thumb.jpg (160x160).
 """
@@ -16,11 +18,11 @@ INDEX_FILE = 'index.html'
 POSTS = [
     {
         'slug': 'designing-for-lusakas-climate',
-        'title': "Designing for Lusaka's Climate: Orientation, Shade and Light",
+        'title': "Designing Homes for Lusaka's Climate",
         'category': 'Architecture Design',
         'date': '14 October, 2026',
         'date_long': 'October 14, 2026',
-        'excerpt': 'A house that works with the sun and the rains costs less to run and is more comfortable to live in. Here is how we start every design.',
+        'excerpt': 'A house that works with the sun and the rains costs less to run and is more comfortable. Here is how we start every design.',
         'body': [
             ('p', 'Lusaka sits on a plateau with strong sun for most of the year, cool dry winters and a short, intense rainy season. Good design here starts long before materials and finishes are chosen: it starts with where the building sits on its plot and which way its rooms face.'),
             ('p', 'Our first move on any residential project is to orient the main living spaces so they receive soft morning light and are shielded from the hot afternoon sun on the west. Bedrooms are placed where they can be cross-ventilated at night, and service rooms take the harshest exposure.'),
@@ -34,11 +36,11 @@ POSTS = [
     },
     {
         'slug': 'planning-permission-what-to-expect',
-        'title': 'Before You Build: What to Expect from the Planning Permission Process',
+        'title': 'Planning Permission: What to Expect',
         'category': 'Planning & Development',
         'date': '22 September, 2026',
         'date_long': 'September 22, 2026',
-        'excerpt': 'Approvals are a normal part of every project. Knowing what the local authority needs, and when, keeps your build on schedule.',
+        'excerpt': 'Approvals are a normal part of every project. Knowing what the local authority needs, and when, keeps your build on track.',
         'body': [
             ('p', 'Every building in Zambia, from a boundary wall to a shopping mall, needs approval from the relevant local authority before construction starts. The process is not complicated, but it does reward preparation: complete, well-presented drawings move through the system far faster than a partial submission.'),
             ('h4', 'What a submission usually contains'),
@@ -51,11 +53,11 @@ POSTS = [
     },
     {
         'slug': 'interiors-that-finish-the-story',
-        'title': 'Interiors That Finish the Story: Choosing Materials and Finishes',
+        'title': 'Interiors That Finish the Story',
         'category': 'Interior Design',
         'date': '28 August, 2026',
         'date_long': 'August 28, 2026',
-        'excerpt': 'The architecture sets the stage; the interior is what people touch every day. How we select colours, materials and furniture that last.',
+        'excerpt': 'Architecture sets the stage; the interior is what people touch every day. How we choose colours, materials and furniture.',
         'body': [
             ('p', 'Interior design completes a project and defines its image. The same shell can read as warm and domestic or crisp and corporate depending on the finishes, lighting and furniture chosen for it, so we treat the interior as a continuation of the architecture rather than a separate exercise.'),
             ('h4', 'Start with how the space is used'),

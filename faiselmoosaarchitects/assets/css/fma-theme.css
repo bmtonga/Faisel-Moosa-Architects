@@ -276,3 +276,35 @@ body::-webkit-scrollbar-thumb:hover {
   height: 1px;
   overflow: hidden;
 }
+
+/* ---- Latest Articles cards: equal height regardless of copy length ---- */
+.latest-article__slider .swiper-slide {
+  height: auto;
+}
+.latest-article__item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.latest-article__content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.latest-article__content h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(2 * 1.3em);
+}
+.latest-article__content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(3 * 1.75em);
+}
+.latest-article__content .read-more {
+  margin-top: auto;
+}
