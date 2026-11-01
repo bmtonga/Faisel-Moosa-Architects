@@ -204,14 +204,18 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10002;
 }
 
-/* Desktop: lift the slide text, thumbnails and arrows 60px so there is less
-   empty space between the header and the headline. */
+/* Desktop: a slightly shorter hero (860px instead of 950px) with the slide text,
+   thumbnails and arrows lifted 110px, so the headline starts ~90px below the
+   header instead of ~235px. */
 @media (min-width: 1200px) {
+  .banner-4 {
+    height: 860px;
+  }
   .banner-4__item:nth-child(n+2) {
-    top: calc(50% - 60px);
+    top: calc(50% - 110px);
   }
   .banner-4__button {
-    bottom: 295px;                 /* template 235px + 60px */
+    bottom: 300px;                 /* keeps the arrows under the lifted thumbnails */
   }
 }
 
