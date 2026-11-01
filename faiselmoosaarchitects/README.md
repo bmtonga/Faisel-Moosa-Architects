@@ -42,6 +42,7 @@ tools/
   build_blog.py           Writes the "Latest Articles" slider on index.html and the blog-*.html pages
   build_pages.py          Builds standalone pages (about-us.html) from tools/pages/*.html partials
   build_services.py       Generates the four service-*.html pages from its SERVICES list
+  bump_assets.py          Stamps ?v=<timestamp> on the site's CSS/JS links (cache-busting)
   pages/                  <main> partials for the standalone pages
 composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
 .env.example              Mail settings template; copy to .env locally (never commit .env)
@@ -92,6 +93,9 @@ Service pages (`service-<slug>.html`) come from the `SERVICES` list in
 ```
 python3 tools/build_services.py
 ```
+
+After editing anything in `assets/css` or `assets/js`, run `python3 tools/bump_assets.py`
+first so browsers and the GitHub Pages CDN fetch the new files instead of cached copies.
 
 Whenever the header or footer on `index.html` changes, run all four generators
 (`build_pages.py`, `build_services.py`, `build_blog.py`, `build_projects.py`) so every

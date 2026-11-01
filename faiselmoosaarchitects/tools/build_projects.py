@@ -44,8 +44,8 @@ def head_for(title, desc):
     h = HEAD
     h = re.sub(r'<title>.*?</title>', f'<title>{html.escape(title)} – Faisel Moosa Architects</title>', h, 1)
     h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{html.escape(desc, quote=True)}">', h, 1)
-    h = h.replace('<link rel="stylesheet" href="assets/css/project-portfolio.css">',
-                  '<link rel="stylesheet" href="assets/css/project-portfolio.css">\n    <link rel="stylesheet" href="assets/css/project-page.css">')
+    h = h.replace('<link rel="stylesheet" href="assets/css/project-portfolio.css?v=202611011145">',
+                  '<link rel="stylesheet" href="assets/css/project-portfolio.css?v=202611011145">\n    <link rel="stylesheet" href="assets/css/project-page.css?v=202611011145">')
     return h
 
 CHECK = ('<svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">'
