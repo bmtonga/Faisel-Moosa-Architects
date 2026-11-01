@@ -38,12 +38,29 @@
             $(window).on('load', relayout);
         }
 
+        function applyFilter(selector) {
+            var $btn = $('.project-portfolio__filter button[data-filter="' + selector + '"]');
+            if (!$btn.length) { return false; }
+            $iso.isotope({ filter: selector });
+            $btn.addClass('active').siblings('.active').removeClass('active');
+            return true;
+        }
+
         $('.project-portfolio__filter').on('click', 'button', function (event) {
             event.preventDefault();
-            var $btn = $(this);
-            $iso.isotope({ filter: $btn.attr('data-filter') });
-            $btn.addClass('active').siblings('.active').removeClass('active');
+            applyFilter($(this).attr('data-filter'));
         });
+
+        // Deep links to a collection: #projects-residential, #projects-commercial,
+        // #projects-refurbishment (used by the Projects menu); #projects shows all.
+        function filterFromHash() {
+            var m = /^#projects(?:-([a-z]+))?$/.exec(window.location.hash || '');
+            if (!m) { return; }
+            applyFilter(m[1] ? '.' + m[1] : '*');
+        }
+        window.fmaApplyProjectFilterFromHash = filterFromHash;
+        $(window).on('hashchange', filterFromHash);
+        filterFromHash();
 
         $iso.on('arrangeComplete', function () {
             if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {

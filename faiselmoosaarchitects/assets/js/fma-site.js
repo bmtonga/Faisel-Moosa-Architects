@@ -61,7 +61,7 @@
         var path = href.slice(0, href.indexOf('#'));
         var here = location.pathname.split('/').pop() || 'index.html';
         if (path && path !== here) return null;          // link to another page
-        return document.getElementById(hash);
+        return document.getElementById(hash) || document.getElementById(hash.replace(/-[a-z]+$/, ''));   // #projects-residential -> #projects
     }
 
     document.addEventListener('click', function (e) {
@@ -70,9 +70,10 @@
         var section = sectionFromHref(a.getAttribute('href'));
         if (!section) return;
         e.preventDefault();
-        scrollToY(targetFor(section), function () {
-            if (history.replaceState) history.replaceState(null, '', '#' + section.id);
-        });
+        var hash = a.getAttribute('href').slice(a.getAttribute('href').indexOf('#'));
+        if (history.replaceState) history.replaceState(null, '', hash);
+        if (window.fmaApplyProjectFilterFromHash) window.fmaApplyProjectFilterFromHash();   // collection deep links
+        scrollToY(targetFor(section));
         // close the mobile offcanvas if it is open
         var panel = document.querySelector('.offcanvas__area.info-open');
         var closeBtn = document.querySelector('.offcanvas-close-icon');
@@ -139,7 +140,7 @@
     // Arriving from another page with a hash (index.html#about): re-position after
     // the browser's native jump, once layout (fonts, images) has settled.
     if (location.hash) {
-        var section = document.getElementById(location.hash.slice(1));
+        var section = sectionFromHref(location.hash);
         if (section) {
             if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
             window.addEventListener('load', function () {
