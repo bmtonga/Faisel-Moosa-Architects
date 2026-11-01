@@ -266,8 +266,39 @@ body::-webkit-scrollbar-thumb:hover {
               transform 2s cubic-bezier(0.22, 1, 0.36, 1),
               opacity 2s cubic-bezier(0.22, 1, 0.36, 1),
               border-radius 2s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: top, left, width, height, opacity;
-  backface-visibility: hidden;
+}
+/* iOS Safari keeps text soft after an animation that ends on filter: blur(0) –
+   the browser interpolates "none" to blur(0px) and keeps a filter layer. The
+   caption animation therefore runs without the filter: fade + slide-up only.
+   (will-change / backface-visibility were also removed from .banner-4__item.) */
+@keyframes fma-caption {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.banner-4__content-title,
+.banner-4__content .des,
+.banner-4__content__btn-box {
+  animation-name: fma-caption;
+  filter: none;
+}
+.banner-4__item:nth-child(2) .banner-4__content {
+  -webkit-font-smoothing: antialiased;
+}
+/* Mobile/tablet: the template centres the text block with translateY(-50%),
+   which lands on half pixels and leaves iOS text soft. Anchor the block's
+   bottom edge above the (hidden) thumbnail instead, with no transform. */
+@media (max-width: 991px) {
+  .banner-4__content {
+    top: auto;
+    bottom: calc(100% + 30px);
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .banner-4__item,
