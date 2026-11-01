@@ -4,9 +4,9 @@ generates one blog-<slug>.html page per post, using index.html's header/footer.
 
 Run from the site root, after any header/footer change on index.html:
     python3 tools/build_blog.py
-Edit POSTS below to add, remove or rewrite a post. Keep every title to ~30-36
-characters and every excerpt to ~120-125 characters so the three cards stay the
-same height (the CSS also clamps them to 2 and 3 lines). Each post needs
+Edit POSTS below to add, remove or rewrite a post. Keep every title to 35-41
+characters (two lines on the card) and every excerpt to 99-102 characters (three
+lines) so the three cards stay the same height. Each post needs
 assets/imgs/blog/<slug>.jpg (1300x634), <slug>-card.jpg (820x400) and
 <slug>-thumb.jpg (160x160).
 """
@@ -22,7 +22,7 @@ POSTS = [
         'category': 'Architecture Design',
         'date': '14 October, 2026',
         'date_long': 'October 14, 2026',
-        'excerpt': 'A house that works with the sun and the rains costs less to run and is more comfortable. Here is how we start every design.',
+        'excerpt': 'A house that works with the sun and the rains costs less to run and is more comfortable to live in.',
         'body': [
             ('p', 'Lusaka sits on a plateau with strong sun for most of the year, cool dry winters and a short, intense rainy season. Good design here starts long before materials and finishes are chosen: it starts with where the building sits on its plot and which way its rooms face.'),
             ('p', 'Our first move on any residential project is to orient the main living spaces so they receive soft morning light and are shielded from the hot afternoon sun on the west. Bedrooms are placed where they can be cross-ventilated at night, and service rooms take the harshest exposure.'),
@@ -40,7 +40,7 @@ POSTS = [
         'category': 'Planning & Development',
         'date': '22 September, 2026',
         'date_long': 'September 22, 2026',
-        'excerpt': 'Approvals are a normal part of every project. Knowing what the local authority needs, and when, keeps your build on track.',
+        'excerpt': 'Approvals are part of every project. Knowing what the local authority needs keeps your build on track.',
         'body': [
             ('p', 'Every building in Zambia, from a boundary wall to a shopping mall, needs approval from the relevant local authority before construction starts. The process is not complicated, but it does reward preparation: complete, well-presented drawings move through the system far faster than a partial submission.'),
             ('h4', 'What a submission usually contains'),
@@ -53,11 +53,11 @@ POSTS = [
     },
     {
         'slug': 'interiors-that-finish-the-story',
-        'title': 'Interiors That Finish the Story',
+        'title': 'Interior Finishes That Complete the Story',
         'category': 'Interior Design',
         'date': '28 August, 2026',
         'date_long': 'August 28, 2026',
-        'excerpt': 'Architecture sets the stage; the interior is what people touch every day. How we choose colours, materials and furniture.',
+        'excerpt': 'Architecture sets the stage; the interior is what people touch every day. How we choose what goes in.',
         'body': [
             ('p', 'Interior design completes a project and defines its image. The same shell can read as warm and domestic or crisp and corporate depending on the finishes, lighting and furniture chosen for it, so we treat the interior as a continuation of the architecture rather than a separate exercise.'),
             ('h4', 'Start with how the space is used'),
@@ -79,6 +79,7 @@ ICON_USER = ('<svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns=
              '<path d="M6 7C4.06641 7 2.5 5.43359 2.5 3.5C2.5 1.56641 4.06641 0 6 0C7.93359 0 9.5 1.56641 9.5 3.5C9.5 5.43359 7.93359 7 6 7ZM6 1.3125C4.79297 1.3125 3.8125 2.29297 3.8125 3.5C3.8125 4.70703 4.79297 5.6875 6 5.6875C7.20703 5.6875 8.1875 4.70703 8.1875 3.5C8.1875 2.29297 7.20703 1.3125 6 1.3125ZM0.5 12.8125C0.5 10.3496 2.50586 8.34375 4.96875 8.34375H7.03125C9.49414 8.34375 11.5 10.3496 11.5 12.8125C11.5 13.2695 11.1191 13.625 10.6875 13.625H1.3125C0.880859 13.625 0.5 13.2695 0.5 12.8125ZM1.83984 12.3125H10.1602C9.91797 10.8125 8.60547 9.65625 7.03125 9.65625H4.96875C3.39453 9.65625 2.08203 10.8125 1.83984 12.3125Z" fill="#906E50"/></svg>')
 
 AUTHOR = 'Faisel Moosa Architects'
+AUTHOR_SHORT = 'FMA Team'      # on the home-page cards, so the meta line never wraps
 
 
 def esc(s):
@@ -98,7 +99,7 @@ def index_section():
                             <div class="latest-article__content">
                                 <ul class="latest-article__meta">
                                     <li><a href="blog-{p['slug']}.html">{esc(p['category'])}</a></li>
-                                    <li><a href="blog-{p['slug']}.html"><span>By</span> {AUTHOR}</a></li>
+                                    <li><a href="blog-{p['slug']}.html"><span>By</span> {AUTHOR_SHORT}</a></li>
                                 </ul>
                                 <h6 class="title-animation mb-10"><a href="blog-{p['slug']}.html">{esc(p['title'])}</a></h6>
                                 <p class="mb-20">{esc(p['excerpt'])}</p>
