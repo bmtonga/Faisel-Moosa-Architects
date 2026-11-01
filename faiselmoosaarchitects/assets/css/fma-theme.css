@@ -122,6 +122,18 @@ body::-webkit-scrollbar-thumb:hover {
   scroll-margin-top: 150px;
 }
 
+/* Off-canvas sidebar: always above the header (z 999999) and the article slider
+   (the template gives .latest-article__slider z-index 99999, the same as the panel) */
+.offcanvas__area {
+  z-index: 1000001;
+}
+.offcanvas__overlay,
+.offcanvas__overlay-white {
+  z-index: 1000000;
+}
+.latest-article__slider {
+  z-index: 1;
+}
 /* Off-canvas sidebar: blur and dim the page behind it while it is open */
 .offcanvas__overlay {
   background: rgba(8, 10, 11, 0.55);
