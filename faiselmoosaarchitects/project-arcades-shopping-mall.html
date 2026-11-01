@@ -55,6 +55,43 @@
 </div>
 <!-- cursorAnimation end -->
 
+<!-- Search popup start -->
+<div class="search__popup">
+    <div class="container">
+        <div class="row gx-30">
+            <div class="col-xxl-12">
+                <div class="search__wrapper">
+                    <div class="search__top d-flex justify-content-between align-items-center">
+                        <div class="search__logo">
+                            <a href="index.html">
+                                <img src="assets/imgs/logo/fma-logo.png" alt="Faisel Moosa Architects" width="184" height="48">
+                            </a>
+                        </div>
+                        <div class="search__close">
+                            <button type="button" class="search__close-btn search-close-btn" aria-label="Close search">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="search__form">
+                        <!-- Site search: wire up to a search page/service later -->
+                        <form action="#" role="search">
+                            <div class="search__input">
+                                <input class="search-input-field" type="search" name="q" placeholder="Type here to search..." aria-label="Search the site">
+                                <span class="search-focus-border"></span>
+                                <button type="submit" aria-label="Search">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search popup end -->
+
 <!-- Offcanvas area start -->
 <div class="fix">
     <div class="offcanvas__area">
@@ -101,45 +138,132 @@
 
 <!-- Header area start -->
 <header>
-    <div id="header-sticky" class="header__area header-4">
-        <div class="mega__menu-wrapper p-relative">
-            <div class="header__main">
-                <div class="header__logo">
-                    <a href="index.html">
-                        <div class="logo">
-                            <img src="assets/imgs/logo/fma-logo.png" alt="Faisel Moosa Architects" width="184" height="48">
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mean__menu-wrapper d-none d-lg-block">
-                    <div class="main-menu main-menu-4">
-                        <nav id="mobile-menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="index.html#about">About Us</a></li>
-                                <li><a href="index.html#services">Services</a></li>
-                                <li class="active"><a href="index.html#projects">Projects</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+    <div id="header-sticky" class="header__area header-3">
+        <!-- header top bar: contacts, language, social (desktop only) -->
+        <div class="header__top d-none d-xl-block">
+            <div class="container">
+                <div class="row g-24">
+                    <div class="col-xxl-8 col-9">
+                        <div class="last_no_bullet">
+                            <ul class="header__top-menu d-flex">
+                                <li>
+                                    <a href="https://www.google.com/maps?q=Plot+1146,+No.+15+Lagos+Road,+Rhodes+Park,+Lusaka,+Zambia" target="_blank" rel="noopener">
+                                        <span><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 3.45V13.25L5.45455 10.8L10.5455 13.25L15 10.8V1L10.5455 3.45L5.45455 1L1 3.45Z" stroke="#906E50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.4541 1V10.8" stroke="#906E50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5459 3.44922V13.2492" stroke="#906E50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                        Plot 1146, Lagos Road, Rhodes Park, Lusaka
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:creativityandflair@gmail.com">
+                                        <span><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.4 1H13.6C14.37 1 15 1.63984 15 2.42188V10.9531C15 11.7352 14.37 12.375 13.6 12.375H2.4C1.63 12.375 1 11.7352 1 10.9531V2.42188C1 1.63984 1.63 1 2.4 1Z" stroke="#906E50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 2.42188L8 7.39844L1 2.42188" stroke="#906E50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                        creativityandflair@gmail.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:+260977824023">
+                                        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9.67161 3.67583C10.3263 3.80331 10.9279 4.12286 11.3995 4.59359C11.8712 5.06432 12.1913 5.66481 12.319 6.3182M9.67161 1C11.0317 1.15081 12.3 1.75871 13.2683 2.72391C14.2365 3.6891 14.8472 4.95421 15 6.31151M14.3298 11.6498V13.6567C14.3305 13.843 14.2923 14.0274 14.2175 14.1981C14.1427 14.3688 14.033 14.522 13.8955 14.648C13.758 14.7739 13.5956 14.8698 13.4187 14.9295C13.2419 14.9892 13.0546 15.0113 12.8686 14.9946C10.8062 14.7709 8.8251 14.0675 7.08449 12.9409C5.46509 11.9138 4.09211 10.5434 3.06307 8.92713C1.93035 7.18196 1.22544 5.19502 1.00544 3.12728C0.988691 2.94229 1.01072 2.75585 1.07012 2.57982C1.12952 2.4038 1.22499 2.24204 1.35046 2.10486C1.47592 1.96768 1.62863 1.85808 1.79886 1.78303C1.96909 1.70798 2.15312 1.66913 2.33921 1.66896H4.34993C4.6752 1.66576 4.99053 1.78072 5.23716 1.99242C5.48379 2.20411 5.64488 2.49809 5.6904 2.81956C5.77527 3.4618 5.93266 4.0924 6.15957 4.69933C6.24974 4.93876 6.26926 5.19898 6.2158 5.44915C6.16235 5.69932 6.03816 5.92895 5.85796 6.11083L5.00676 6.9604C5.96088 8.63517 7.35021 10.0218 9.02818 10.9741L9.87939 10.1246C10.0616 9.94471 10.2917 9.82076 10.5423 9.76741C10.793 9.71405 11.0537 9.73353 11.2936 9.82354C11.9017 10.05 12.5335 10.2071 13.177 10.2918C13.5025 10.3376 13.7999 10.5013 14.0124 10.7517C14.225 11.0021 14.3379 11.3217 14.3298 11.6498Z" stroke="#906E50" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                        +260 977 824 023
+                                    </a>
+                                </li>
                             </ul>
-                        </nav>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-3">
+                        <div class="header__top-wrapper d-flex justify-content-end">
+                            <div class="header__top__lang-select">
+                                <div class="header__top__lang-select-select">
+                                    <select id="site-language" aria-label="Language" style="display: none;">
+                                        <option>English</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- social links: add the real profile URLs when available -->
+                            <ul class="header__top-socail d-flex">
+                                <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mega__menu-wrapper p-relative">
+                <div class="header__main">
+                    <div class="header__logo">
+                        <a href="index.html">
+                            <div class="logo">
+                                <img src="assets/imgs/logo/fma-logo-dark.png" alt="Faisel Moosa Architects" width="184" height="48">
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="header__right">
-                    <div class="header__action d-flex align-items-center">
-                        <div class="header__right-quite">
-                            <a href="contact-us.html">Get a Quote</a>
+                    <div class="mean__menu-wrapper d-none d-lg-block">
+                        <div class="main-menu main-menu-3">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.html#about">About Us</a></li>
+                                    <li class="has-dropdown">
+                                        <a href="index.html#services">Services</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html#services">Architecture Design</a></li>
+                                            <li><a href="index.html#services">Interior Design</a></li>
+                                            <li><a href="index.html#services">Planning &amp; Development</a></li>
+                                            <li><a href="index.html#services">Project Management</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown active">
+                                        <a href="index.html#projects">Projects</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html#projects">Residential</a></li>
+                                            <li><a href="index.html#projects">Commercial</a></li>
+                                            <li><a href="index.html#projects">Refurbishment</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Blog: placeholder until the blog pages exist -->
+                                    <li class="has-dropdown">
+                                        <a href="javascript:void(0)">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="javascript:void(0)">Blog</a></li>
+                                            <li><a href="javascript:void(0)">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact-us.html">Contact</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <div class="header__hamburger">
-                            <div class="sidebar__toggle">
-                                <a class="bar-icon" href="javascript:void(0)">
-                                    <span></span>
-                                    <span></span>
-                                </a>
+                    </div>
+
+                    <div class="header__right">
+                        <div class="header__action d-flex align-items-center">
+                            <div class="header__btn-wrap align-items-center d-inline-flex">
+                                <div class="rr-header-icon-search">
+                                    <button class="search-open-btn" type="button" aria-label="Search">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9.88966 18.7793C14.7993 18.7793 18.7793 14.7993 18.7793 9.88966C18.7793 4.98004 14.7993 1 9.88966 1C4.98004 1 1 4.98004 1 9.88966C1 14.7993 4.98004 18.7793 9.88966 18.7793Z" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.0017 20.9978L16.168 16.1641" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <div class="rr-header-contact-btn d-flex align-items-center d-none d-sm-flex">
+                                    <a href="contact-us.html" class="rr-btn__header">
+                                        <span class="btn-wrap">
+                                            <span class="text-one">Enquire <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 6.5H11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 1.5L11 6.5L6 11.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span class="text-two">Enquire <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 6.5H11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 1.5L11 6.5L6 11.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header__hamburger ml-30 d-xl-none">
+                                <div class="sidebar__toggle">
+                                    <a class="bar-icon" href="javascript:void(0)" aria-label="Open menu">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -338,6 +462,7 @@
 <script src="assets/js/plugins/swiper.min.js"></script>
 <script src="assets/js/plugins/wow.js"></script>
 <script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
 <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
 <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
 <script src="assets/js/plugins/gsap.min.js"></script>

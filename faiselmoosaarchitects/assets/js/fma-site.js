@@ -84,7 +84,7 @@
         var nav = document.getElementById('mobile-menu');
         if (!nav) return;
         var here = location.pathname.split('/').pop() || 'index.html';
-        var links = [].slice.call(nav.querySelectorAll('a[href]'));
+        var links = [].slice.call(nav.querySelectorAll(':scope > ul > li > a[href]'));   // top-level items only
         var entries = [];   // {id, section} in page order; id '' = the top of the page (Home)
         links.forEach(function (a) {
             var href = a.getAttribute('href');
@@ -100,7 +100,7 @@
 
         function setActive(id) {
             // #mobile-menu and the meanmenu clone (.mean-nav) share the same hrefs
-            var all = document.querySelectorAll('#mobile-menu ul li, .mean-nav ul li');
+            var all = document.querySelectorAll('#mobile-menu > ul > li, .mean-nav > ul > li');   // top-level items only
             [].forEach.call(all, function (li) {
                 var a = li.querySelector(':scope > a');
                 if (!a) return;

@@ -36,7 +36,7 @@ def chrome():
                        .replace('href="#services"', 'href="index.html#services"')
                        .replace('href="#projects"', 'href="index.html#projects"'))
     top = fix(top).replace('<li class="active"><a href="index.html">Home</a></li>', '<li><a href="index.html">Home</a></li>') \
-                  .replace('<li><a href="index.html#projects">Projects</a></li>', '<li class="active"><a href="index.html#projects">Projects</a></li>')
+                  .replace('<li class="has-dropdown">\n                                        <a href="index.html#projects">Projects</a>', '<li class="has-dropdown active">\n                                        <a href="index.html#projects">Projects</a>')
     foot = fix(foot)
     return top, foot
 
