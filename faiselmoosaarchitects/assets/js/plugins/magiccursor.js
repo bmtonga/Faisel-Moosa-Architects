@@ -119,5 +119,6 @@ class Cursor {
         this.visibleInt = setTimeout(() => this.visible = false, this.options.visibleTimeout);
     }
 }
-// Init cursor
-const cursor = new Cursor();
+// Init cursor – only on devices with a real pointer (mouse/trackpad); touch
+// screens get no custom cursor at all.
+const cursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches ? new Cursor() : null;
