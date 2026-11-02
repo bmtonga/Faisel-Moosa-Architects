@@ -132,7 +132,29 @@
 /*----------------------------------------*/
 /*  1.1 Theme Default
 /*----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap");
+/* Self-hosted fonts (SIL Open Font License, see assets/fonts/OFL-*.txt) –
+   replaces the Google Fonts @import so text renders the same on every device */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/outfit-variable.woff2") format("woff2-variations"), url("../fonts/outfit-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("../fonts/dm-sans-variable.woff2") format("woff2-variations"), url("../fonts/dm-sans-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("../fonts/dm-sans-italic-variable.woff2") format("woff2-variations"), url("../fonts/dm-sans-italic-variable.woff2") format("woff2");
+}
 .our-team-2__item__content, .our-team-2__item__socail a, .latest-project-3__item::after, .latest-project-3__content, .work-process__item, .work-process__item::before, .work-process__icon, .rr-instagram-2__thumb .overlay, .latest-project-2__item::after, .latest-project-2__content, .latest-service__item, .latest-service__item::before, .latest-service__icon, .projects__nav-tabs .nav-link::after, .projects__text-top, .projects__text-bottom, .projects__arrow, .about-us-2__nav-tabs .nav-link::after, .latest-article__item, .latest-article__media img, .latest-article__meta li a, .latest-article__slider-dot .swiper-pagination-bullet, .team-details__social ul li a, .protfolio__item::before, .protfolio__item-icon, .protfolio__item-text, .testimonial-2__author-text h6, .testimonial-2__slider-dot .swiper-pagination-bullet, .our-work-precess-2__item, .our-work-precess-2__icon, .our-featured-service__media img, .our-featured-service__icon, .working-process__icon, .working-process__icon .number, .team-member__media::before, .team-member__socail-media, .team-member__content, .recent-project__item, .recent-project__media::before, .recent-project__media img, .recent-project__arrow, .expert__item, .expert__slider-dot .swiper-pagination-bullet, .latest-project__media img, .latest-project__media .icon, .our-team__item-media::before, .our-team__item-media::after, .our-team__item__text, .our-team__item__socail, .our-team__item__socail a, .testimonial__slider-dot .swiper-pagination-bullet, .footer-7__gallery a i, .footer-7__copyright-menu ul li::before, .footer-7__copyright-menu ul li a, .footer-5__gallery a i, .footer-5__gallery a:after, .footer-3__contact ul li .text a, .footer-2__gallery a i, .footer-2__gallery a:after, .footer__support .text a, .footer__contact ul li .text a, .footer__post-item__content-title, .footer-5__copyright-menu ul li::before, .footer-5__copyright-menu ul li a, .footer-3__copyright-menu ul li::before, .footer-3__copyright-menu ul li a, .footer-2__copyright-menu ul li::before, .footer-2__copyright-menu ul li a, .footer__copyright-menu ul li::before, .footer__copyright-menu ul li a, .blog-details__tag-list li a, .blog-details__sheir-icon li a i.fa-twitter, .blog-details__sheir-icon li a i.fa-facebook-f, .blog-details__sheir-icon li a i.fa-linkedin-in, .blog-details__sheir-icon li a i.fa-pinterest, .blog-grid__media img, .sidebar__widget-category a, .sidebar__widget-tags .tags a, .blog-3__pagination li a, .blog-2__media img, .blog__item-media img, .mean-container .mean-nav ul li > a.mean-expand i, .main-menu ul li.has-dropdown > a::after, .main-menu ul li .submenu, .main-menu ul li .submenu li a::before, .main-menu ul li .mega-menu, .main-menu ul li .mega-menu li ul li a::before, .main-menu-6 ul li.has-dropdown > a::after, .main-menu-6 ul li .submenu, .main-menu-6 ul li .submenu li a::before, .main-menu-6 ul li .mega-menu, .main-menu-6 ul li .mega-menu li ul li a::before, .main-menu-7 ul li.has-dropdown > a::after, .main-menu-7 ul li .submenu, .main-menu-7 ul li .submenu li a::before, .main-menu-7 ul li .mega-menu, .main-menu-7 ul li .mega-menu li ul li a::before, .main-menu-8 ul li.has-dropdown > a::after, .main-menu-8 ul li .submenu, .main-menu-8 ul li .submenu li a::before, .main-menu-8 ul li .mega-menu, .main-menu-8 ul li .mega-menu li ul li a::before, .main-menu-9 ul li.has-dropdown > a::after, .main-menu-9 ul li .submenu, .main-menu-9 ul li .submenu li a::before, .main-menu-9 ul li .mega-menu, .main-menu-9 ul li .mega-menu li ul li a::before, .main-menu-10 ul li.has-dropdown > a::after, .main-menu-10 ul li .submenu, .main-menu-10 ul li .submenu li a::before, .main-menu-10 ul li .mega-menu, .main-menu-10 ul li .mega-menu li ul li a::before, .banner__slider__arrow-prev, .banner__slider__arrow-next, .banner__slider__arrow-prev svg path, .banner__slider__arrow-next svg path, .banner__item:after, .banner__item::before, .header-3 .header__top, .header-3 .header__top-menu li::before, .header-3 .header__top__lang-select::before, .header-2 .header__top, .header-2 .header__top__lang-select::before, .offcanvas__overlay, .offcanvas__navigation button svg, .rr-btn__header .btn-wrap .text-one, .rr-btn__header .btn-wrap .text-two, .rr-btn .btn-wrap .text-one, .rr-btn .btn-wrap .text-two, .body__overlay, a,
 .btn,
 button,

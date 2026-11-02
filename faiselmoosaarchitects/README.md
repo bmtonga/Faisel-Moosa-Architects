@@ -16,6 +16,7 @@ Static site for Faisel Moosa Architects, Lusaka. Built on the Artima HTML templa
 
 ```
 assets/
+  fonts/                  Self-hosted Outfit and DM Sans (variable WOFF2, SIL OFL) and Font Awesome
   css/
     main.css              Artima theme (compiled; do not edit the vendor sections)
     project-portfolio.css Projects grid on the home page
