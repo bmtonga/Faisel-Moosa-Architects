@@ -37,7 +37,7 @@ SERVICES = [
             ('Clear decisions, recorded', 'Each stage ends with a review meeting and a signed-off set of drawings, so the project moves forward on agreed ground.'),
             ('One practice, start to finish', 'The same team carries the design through production information and on to site, so nothing is lost between stages.'),
         ],
-        'alts': ['Four bedroom house designed by Faisel Moosa Architects', 'Multipurpose building by Faisel Moosa Architects', 'Bonanza housing development', 'Gambrel House country cottage'],
+        'alts': ['Timber lattice canopy structure against the sky', 'Multipurpose building by Faisel Moosa Architects', 'Bonanza housing development', 'Gambrel House country cottage'],
     },
     {
         'slug': 'interior-design',
@@ -61,7 +61,7 @@ SERVICES = [
             ('Designed with the architecture', 'Because the same practice designs the building, interior and shell are resolved together rather than in competition.'),
             ('Budgets held', 'Specifications are chosen with the cost plan in view, so the opening-day interior is the one that was approved.'),
         ],
-        'alts': ['Open-plan interior with timber ceiling and a steel staircase', 'Tafika restaurant and bar interior', 'Cargo88 Hotel interior', 'Tafika interior detail'],
+        'alts': ['Open-plan interior with timber ceiling and a steel staircase', 'Bright atrium with sculptural white columns', 'Cargo88 Hotel interior', 'Tafika interior detail'],
     },
     {
         'slug': 'planning-development',
@@ -85,7 +85,7 @@ SERVICES = [
             ('Realistic programmes', 'We keep you informed of where the application sits, so decisions about contractors and financing are made with realistic dates in mind.'),
             ('Carried through to site', 'The same approved drawings are managed through construction by our project management service.'),
         ],
-        'alts': ['Office park development by Faisel Moosa Architects', 'East Park Mall Phase 6', 'Gardenview Properties office block', 'Aerial view of a waterside resort development'],
+        'alts': ['Client reviewing a floor plan at home', 'Engineer studying wind-turbine models on a laptop', 'Gardenview Properties office block', 'Aerial view of a waterside resort development'],
     },
     {
         'slug': 'project-management',
