@@ -685,3 +685,56 @@ body::-webkit-scrollbar-thumb:hover {
     display: none !important;
   }
 }
+
+/* ---- Counters strip: two per row below 768px, evenly spaced ---- */
+@media (max-width: 767px) {
+  .experience__item-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: initial;
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+  .experience__item {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .experience__item-content {
+    gap: 14px;
+  }
+  .experience__item-content-icon {
+    height: 64px;                 /* same box for every icon so labels line up across a row */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .experience__item-content-icon img {
+    max-width: 60px;
+    max-height: 64px;
+    width: auto;
+    height: auto;
+  }
+  .experience__item-content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .experience__item-content-text h6 {
+    font-size: 17px;
+    line-height: 1.3;
+    height: calc(2 * 1.3em + 10px); /* two lines + padding reserved so every number sits at the same height */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 0.28em;           /* flex drops the spaces between words; this puts them back */
+  }
+  .experience__item-content-text h2 {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .experience__item-content-text h2::before {
+    width: 100px;
+  }
+}
