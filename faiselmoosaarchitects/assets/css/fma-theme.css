@@ -1015,3 +1015,10 @@ body.fma-cc-open { overflow: hidden; }
   .banner-4 + .about-us-4 .about-us-4__box h4 span { font-size: 40px; line-height: 48px; }
   .banner-4 + .about-us-4 .about-us-4__box h4::before { width: 60px; height: 60px; top: -14px; right: -18px; }
 }
+
+/* Testimonials: reserve the same number of quote lines on every slide so the
+   card height does not change as the slider moves (template line-height 34px) */
+.testimonial-2__content p.mb-0 { min-height: 170px; }                        /* 5 lines */
+@media (max-width: 1199px) { .testimonial-2__content p.mb-0 { min-height: 204px; } }   /* 6 */
+@media (max-width: 575px)  { .testimonial-2__content p.mb-0 { min-height: 272px; } }   /* 8 */
+@media (max-width: 359px)  { .testimonial-2__content p.mb-0 { min-height: 306px; } }   /* 9 */
