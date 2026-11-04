@@ -740,11 +740,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* ---- Legal pages (privacy, terms, cookies) ---- */
-.fma-legal__banner {
-  background: #080a0b !important;         /* plain dark band, no photo or gradient */
-}
-.fma-legal__banner .breadcrumb__bg-left,
-.fma-legal__banner .breadcrumb__bg-right { display: none; }
 .fma-legal__meta {
   font-size: 14px;
   letter-spacing: 1px;
