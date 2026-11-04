@@ -9,7 +9,7 @@ import glob
 import re
 
 ASSETS = ['assets/css/main.css', 'assets/css/project-portfolio.css', 'assets/css/project-page.css',
-          'assets/css/fma-theme.css', 'assets/js/main.js', 'assets/js/project-portfolio.js', 'assets/js/fma-site.js']
+          'assets/css/fma-theme.css', 'assets/js/main.js', 'assets/js/project-portfolio.js', 'assets/js/fma-site.js', 'assets/js/fma-cookie-consent.js']
 VERSION = datetime.datetime.now().strftime('%Y%m%d%H%M')
 
 for f in ['index.html', 'contact-us.html'] + glob.glob('tools/pages/*.html') + ['tools/build_projects.py']:

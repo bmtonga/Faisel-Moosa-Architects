@@ -104,6 +104,15 @@ Whenever the header or footer on `index.html` changes, run all four generators
 (`build_pages.py`, `build_services.py`, `build_blog.py`, `build_projects.py`) so every
 page picks up the new chrome; `contact-us.html` is maintained by hand.
 
+## Cookie consent
+
+`assets/js/fma-cookie-consent.js` shows a consent notice on first visit and stores the
+choice in `localStorage` (`fma-cookie-consent`). The site sets no cookies of its own; the
+only optional category is embedded content (the Google Maps iframe on the contact page),
+marked up as `<div data-consent="embeds" data-src="…">` and loaded only after consent.
+"Cookie Settings" in the footer (`data-cookie-settings`) reopens the preferences dialog.
+Bump `VERSION` in the script if the categories ever change, so visitors are asked again.
+
 ## Contact form
 
 `contact-us.html` posts to `mail.php`, which validates the fields, drops honeypot
