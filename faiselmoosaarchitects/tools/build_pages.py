@@ -43,9 +43,9 @@ def build():
     for partial in sorted(glob.glob('tools/pages/*.html')):
         name = os.path.basename(partial)
         src = open(partial).read()
-        meta = dict(re.findall(r'<!-- (title|description|nav): (.*?) -->', src))
+        meta = {k: v.strip() for k, v in re.findall(r'<!-- (title|description|nav): ?(.*?) -->', src)}
         main = src[src.index('<main>'):src.index('</main>') + len('</main>')]
-        top, foot = chrome(meta.get('nav'))
+        top, foot = chrome(meta.get('nav') or None)
         page = head_for(meta['title'], meta['description']) + '<body class="body-1">' + top + main + '\n\n' + foot
         open(name, 'w').write(page)
         print('wrote', name)

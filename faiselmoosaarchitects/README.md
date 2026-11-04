@@ -43,6 +43,7 @@ tools/
   build_blog.py           Writes the "Latest Articles" slider on index.html and the blog-*.html pages
   build_pages.py          Builds standalone pages (about-us.html) from tools/pages/*.html partials
   build_services.py       Generates the four service-*.html pages from its SERVICES list
+  build_legal.py          Writes the privacy-policy / terms-of-use / cookie-policy partials from its PAGES data
   bump_assets.py          Stamps ?v=<timestamp> on the site's CSS/JS links (cache-busting)
   pages/                  <main> partials for the standalone pages
 composer.json / .lock     PHP dependencies (phpmailer/phpmailer)
@@ -81,6 +82,7 @@ excerpt, body). Each post needs `assets/imgs/blog/<slug>.jpg` (1300x634), `<slug
 python3 tools/build_blog.py
 ```
 
+The legal pages' text lives in `tools/build_legal.py` (run it, then `build_pages.py`).
 Standalone pages such as `about-us.html` are built from a `<main>` partial in
 `tools/pages/` (edit the partial, not the generated file):
 
