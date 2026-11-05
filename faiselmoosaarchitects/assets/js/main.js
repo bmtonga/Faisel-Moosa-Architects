@@ -34,7 +34,11 @@
             this.upDownScrollTriggerAnimation('.b-t__scroll');
             $('.right-separetor').length && this.width100ScrollTriggerAnimation('.right-separetor');
             $('.left-separetor').length && this.width100ScrollTriggerAnimation('.left-separetor');
-            $('.title-animation').length && this.sectionTitleAnimation('.title-animation');
+            // Word-by-word heading reveal only on desktop pointers: on phones/tablets the
+            // ScrollTrigger positions go stale and words are left faded or clipped.
+            var desktopHeadings = window.matchMedia('(min-width: 992px) and (hover: hover) and (pointer: fine)').matches
+                && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+            desktopHeadings && $('.title-animation').length && this.sectionTitleAnimation('.title-animation');
         }
 
         static sectionTitleAnimation(activeClass) {
@@ -429,7 +433,8 @@
         centeredSlides: true,
         clickable: true,
         autoplay: {
-            delay: 3000,
+            delay: window.innerWidth < 992 ? 9000 : 6000,   // time to read a full quote; longer on phones
+            disableOnInteraction: false,
         },
         pagination: {
             el: ".testimonial-2__slider-dot",

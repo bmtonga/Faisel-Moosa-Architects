@@ -1022,3 +1022,15 @@ body.fma-cc-open { overflow: hidden; }
 @media (max-width: 1199px) { .testimonial-2__content p.mb-0 { min-height: 204px; } }   /* 6 */
 @media (max-width: 575px)  { .testimonial-2__content p.mb-0 { min-height: 272px; } }   /* 8 */
 @media (max-width: 359px)  { .testimonial-2__content p.mb-0 { min-height: 306px; } }   /* 9 */
+
+/* Headings: on phones/tablets the split-word reveal is skipped (main.js), so
+   make sure nothing leaves them faded or clipped */
+@media (max-width: 991px) {
+  .title-animation,
+  .title-animation div {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+}
