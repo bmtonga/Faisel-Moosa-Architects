@@ -4,10 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>East Park Mall Piazza â€“ Faisel Moosa Architects</title>
-    <meta name="description" content="East Park Mall Piazza â€“ Open event and social space, 2019. Commercial project by Faisel Moosa Architects, Lusaka, Zambia.">
+    <title>East Park Mall Piazza – Faisel Moosa Architects</title>
+    <meta name="description" content="East Park Mall Piazza – Open event and social space, 2019. Commercial project by Faisel Moosa Architects, Lusaka, Zambia.">
     <meta name="author" content="Faisel Moosa Architects">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function () {
+            var key = 'fma-theme';
+            var saved = null;
+            try { saved = localStorage.getItem(key); } catch (e) {}
+            var preference = /^(light|dark)$/.test(saved || '') ? saved : 'system';
+            var dark = preference === 'dark' || (preference === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.dataset.themePreference = preference;
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        }());
+    </script>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="assets/imgs/fma-favicon.png">
     <link rel="apple-touch-icon" href="assets/imgs/apple-touch-icon.png">
@@ -159,7 +171,7 @@
                     <div class="header__logo">
                         <a href="index.html">
                             <div class="logo">
-                                <img src="assets/imgs/logo/fma-logo-dark.png" alt="Faisel Moosa Architects" width="184" height="48">
+                                <img src="assets/imgs/logo/fma-logo-dark.png" data-theme-logo data-light-src="assets/imgs/logo/fma-logo-dark.png" data-dark-src="assets/imgs/logo/fma-logo.png" alt="Faisel Moosa Architects" width="184" height="48">
                             </div>
                         </a>
                     </div>
@@ -203,6 +215,11 @@
 
                     <div class="header__right">
                         <div class="header__action d-flex align-items-center">
+                            <button class="fma-theme-toggle" type="button" data-theme-toggle aria-label="Theme: system. Change colour theme" title="Theme: system">
+                                <svg class="fma-theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <svg class="fma-theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 15.2A8.5 8.5 0 018.8 3.6 8.5 8.5 0 1020.4 15.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <span class="visually-hidden" data-theme-label>System theme</span>
+                            </button>
                             <div class="header__btn-wrap align-items-center d-inline-flex">
                                 <div class="rr-header-contact-btn d-flex align-items-center d-none d-sm-flex">
                                     <a href="contact-us.html" class="rr-btn__header">
@@ -264,7 +281,7 @@
         <div class="container">
             <div class="protfolio-details__content">
                 <div class="protfolio-details__media">
-                    <img src="./assets/imgs/portfolio/east-park-mall-piazza/02.jpg" alt="East Park Mall Piazza â€“ open event and social space by Faisel Moosa Architects">
+                    <img src="./assets/imgs/portfolio/east-park-mall-piazza\02.jpg" alt="East Park Mall Piazza – open event and social space by Faisel Moosa Architects">
                     <div class="protfolio-details__info">
                         <span class="protfolio-details__info-date"><i class="fa-regular fa-calendar-days"></i>2019</span>
                         <div class="protfolio-details__info-list">
@@ -278,17 +295,17 @@
                 <p>East Park Mall Piazza is a open event and social space designed by Faisel Moosa Architects. Project type: Commercial. Year: 2019.</p>
                 <ul class="mb-30">
                     <li><svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1094 0.640625C18.6172 1.10938 18.6172 1.92969 18.1094 2.39844L8.10938 12.3984C7.64062 12.9062 6.82031 12.9062 6.35156 12.3984L1.35156 7.39844C0.84375 6.92969 0.84375 6.10938 1.35156 5.64062C1.82031 5.13281 2.64062 5.13281 3.10938 5.64062L7.21094 9.74219L16.3516 0.640625C16.8203 0.132812 17.6406 0.132812 18.1094 0.640625Z" fill="#906E50"/></svg> Architecture design by Faisel Moosa Architects, Lusaka</li>
-                    <li><svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1094 0.640625C18.6172 1.10938 18.6172 1.92969 18.1094 2.39844L8.10938 12.3984C7.64062 12.9062 6.82031 12.9062 6.35156 12.3984L1.35156 7.39844C0.84375 6.92969 0.84375 6.10938 1.35156 5.64062C1.82031 5.13281 2.64062 5.13281 3.10938 5.64062L7.21094 9.74219L16.3516 0.640625C16.8203 0.132812 17.6406 0.132812 18.1094 0.640625Z" fill="#906E50"/></svg> 2 project photos in the gallery below â€“ click any image to view it full size</li>
+                    <li><svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1094 0.640625C18.6172 1.10938 18.6172 1.92969 18.1094 2.39844L8.10938 12.3984C7.64062 12.9062 6.82031 12.9062 6.35156 12.3984L1.35156 7.39844C0.84375 6.92969 0.84375 6.10938 1.35156 5.64062C1.82031 5.13281 2.64062 5.13281 3.10938 5.64062L7.21094 9.74219L16.3516 0.640625C16.8203 0.132812 17.6406 0.132812 18.1094 0.640625Z" fill="#906E50"/></svg> 2 project photos in the gallery below – click any image to view it full size</li>
                 </ul>
 
                 <h4>Gallery</h4>
                 <div class="project-page__gallery mb-40">
-                    <a href="./assets/imgs/portfolio/east-park-mall-piazza/01.jpg" class="project-page__gallery-item popup-image" aria-label="View photo 1 of East Park Mall Piazza"><img src="./assets/imgs/portfolio/east-park-mall-piazza/01.jpg" alt="East Park Mall Piazza â€“ photo 1" loading="lazy"></a>
-                    <a href="./assets/imgs/portfolio/east-park-mall-piazza/02.jpg" class="project-page__gallery-item popup-image" aria-label="View photo 2 of East Park Mall Piazza"><img src="./assets/imgs/portfolio/east-park-mall-piazza/02.jpg" alt="East Park Mall Piazza â€“ photo 2" loading="lazy"></a>
+                    <a href="./assets/imgs/portfolio/east-park-mall-piazza\01.jpg" class="project-page__gallery-item popup-image" aria-label="View photo 1 of East Park Mall Piazza"><img src="./assets/imgs/portfolio/east-park-mall-piazza\01.jpg" alt="East Park Mall Piazza – photo 1" loading="lazy"></a>
+                    <a href="./assets/imgs/portfolio/east-park-mall-piazza\02.jpg" class="project-page__gallery-item popup-image" aria-label="View photo 2 of East Park Mall Piazza"><img src="./assets/imgs/portfolio/east-park-mall-piazza\02.jpg" alt="East Park Mall Piazza – photo 2" loading="lazy"></a>
                 </div>
 
                 <div class="project-page__nav">
-                    <a href="project-east-park-mall-phase-6.html" class="rr-btn rr-btn-white"><span class="btn-wrap"><span class="text-one"><i class="fa-regular fa-arrow-left"></i> East Park Mall â€“ Phase 6</span><span class="text-two"><i class="fa-regular fa-arrow-left"></i> East Park Mall â€“ Phase 6</span></span></a>
+                    <a href="project-east-park-mall-phase-6.html" class="rr-btn rr-btn-white"><span class="btn-wrap"><span class="text-one"><i class="fa-regular fa-arrow-left"></i> East Park Mall – Phase 6</span><span class="text-two"><i class="fa-regular fa-arrow-left"></i> East Park Mall – Phase 6</span></span></a>
                     <a href="index.html#projects" class="rr-btn"><span class="btn-wrap"><span class="text-one">All Projects</span><span class="text-two">All Projects</span></span></a>
                     <a href="project-tafika.html" class="rr-btn rr-btn-white"><span class="btn-wrap"><span class="text-one">Tafika <i class="fa-regular fa-arrow-right"></i></span><span class="text-two">Tafika <i class="fa-regular fa-arrow-right"></i></span></span></a>
                 </div>
@@ -304,19 +321,19 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="project-arcades-shopping-mall.html" class="related-project__media project-page__related">
                         <img src="./assets/imgs/portfolio/arcades-shopping-mall/cover.jpg" alt="Arcades Shopping Mall">
-                        <span class="project-page__related-caption"><strong>Arcades Shopping Mall</strong><span>Refurbished shopping mall Â· 2025</span></span>
+                        <span class="project-page__related-caption"><strong>Arcades Shopping Mall</strong><span>Refurbished shopping mall · 2025</span></span>
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <a href="project-cargo88-hotel.html" class="related-project__media project-page__related">
                         <img src="./assets/imgs/portfolio/cargo88-hotel/cover.jpg" alt="Cargo88 Hotel">
-                        <span class="project-page__related-caption"><strong>Cargo88 Hotel</strong><span>Hotel Â· 2023</span></span>
+                        <span class="project-page__related-caption"><strong>Cargo88 Hotel</strong><span>Hotel · 2023</span></span>
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <a href="project-east-park-mall-phase-6.html" class="related-project__media project-page__related">
-                        <img src="./assets/imgs/portfolio/east-park-mall-phase-6/cover.jpg" alt="East Park Mall â€“ Phase 6">
-                        <span class="project-page__related-caption"><strong>East Park Mall â€“ Phase 6</strong><span>Various stores and piazza Â· 2019â€“2025</span></span>
+                        <img src="./assets/imgs/portfolio/east-park-mall-phase-6/cover.jpg" alt="East Park Mall – Phase 6">
+                        <span class="project-page__related-caption"><strong>East Park Mall – Phase 6</strong><span>Various stores and piazza · 2019–2025</span></span>
                     </a>
                 </div>
             </div>

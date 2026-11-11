@@ -8,6 +8,60 @@
 (function () {
     "use strict";
 
+    // ---- Colour theme: follow the system initially, then toggle Light <-> Dark ----
+    (function () {
+        var STORAGE_KEY = 'fma-theme';
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function preference() {
+            var value = document.documentElement.dataset.themePreference;
+            return /^(system|light|dark)$/.test(value || '') ? value : 'system';
+        }
+
+        function resolved(value) {
+            return value === 'system' ? (media.matches ? 'dark' : 'light') : value;
+        }
+
+        function apply(value, save) {
+            var theme = resolved(value);
+            document.documentElement.dataset.themePreference = value;
+            document.documentElement.dataset.theme = theme;
+            if (save) {
+                try {
+                    if (value === 'system') localStorage.removeItem(STORAGE_KEY);
+                    else localStorage.setItem(STORAGE_KEY, value);
+                } catch (e) {}
+            }
+
+            [].forEach.call(document.querySelectorAll('[data-theme-toggle]'), function (button) {
+                var name = value.charAt(0).toUpperCase() + value.slice(1);
+                button.setAttribute('aria-label', 'Theme: ' + value + '. Change colour theme');
+                button.title = 'Theme: ' + name + ' (click to change)';
+                var label = button.querySelector('[data-theme-label]');
+                if (label) label.textContent = name + ' theme';
+            });
+            [].forEach.call(document.querySelectorAll('[data-theme-logo]'), function (logo) {
+                var src = logo.getAttribute(theme === 'dark' ? 'data-dark-src' : 'data-light-src');
+                if (src && logo.getAttribute('src') !== src) logo.setAttribute('src', src);
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            var button = event.target.closest ? event.target.closest('[data-theme-toggle]') : null;
+            if (!button) return;
+            // Base the next state on the theme the visitor can currently see.
+            // A three-state System/Light/Dark cycle could make the first click
+            // appear to do nothing when System already matched the next state.
+            var next = resolved(preference()) === 'dark' ? 'light' : 'dark';
+            apply(next, true);
+        });
+
+        function systemChanged() { if (preference() === 'system') apply('system', false); }
+        if (media.addEventListener) media.addEventListener('change', systemChanged);
+        else if (media.addListener) media.addListener(systemChanged);
+        apply(preference(), false);
+    }());
+
     var SPACE_BELOW_HEADER = 32;   // px of air between the header and the section top
     var CENTERED = { about: '.row' }; // sections centred on their content block instead of top-aligned
 
